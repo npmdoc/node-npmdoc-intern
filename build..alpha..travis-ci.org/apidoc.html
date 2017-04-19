@@ -1,0 +1,5519 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="http://theintern.io/"
+
+    >intern (v3.4.3)</a>
+</h1>
+<h4>Intern. A next-generation code testing stack for JavaScript.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.intern">module intern</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.CallbackQueue">
+            function <span class="apidocSignatureSpan">intern.</span>CallbackQueue
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.DateObject">
+            function <span class="apidocSignatureSpan">intern.</span>DateObject
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.Evented">
+            function <span class="apidocSignatureSpan">intern.</span>Evented
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.Observable">
+            function <span class="apidocSignatureSpan">intern.</span>Observable
+            <span class="apidocSignatureSpan">(props)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.Promise">
+            function <span class="apidocSignatureSpan">intern.</span>Promise
+            <span class="apidocSignatureSpan">(initializer)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.Registry">
+            function <span class="apidocSignatureSpan">intern.</span>Registry
+            <span class="apidocSignatureSpan">(defaultValue)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.Scheduler">
+            function <span class="apidocSignatureSpan">intern.</span>Scheduler
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.has">
+            function <span class="apidocSignatureSpan">intern.</span>has
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.loader">
+            function <span class="apidocSignatureSpan">intern.</span>loader
+            <span class="apidocSignatureSpan">(config, dependencies, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.on">
+            function <span class="apidocSignatureSpan">intern.</span>on
+            <span class="apidocSignatureSpan">(target, type, listener, capture)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.request">
+            function <span class="apidocSignatureSpan">intern.</span>request
+            <span class="apidocSignatureSpan">(url, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">intern.</span>CallbackQueue.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">intern.</span>DateObject.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">intern.</span>Evented.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">intern.</span>Observable.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">intern.</span>Promise.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">intern.</span>Registry.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">intern.</span>Scheduler.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">intern.</span>aspect</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">intern.</span>cookie</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">intern.</span>diff</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">intern.</span>dom</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">intern.</span>io_query</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">intern.</span>lang</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">intern.</span>node</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">intern.</span>string</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">intern.</span>text</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">intern.</span>topic</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.intern.CallbackQueue">module intern.CallbackQueue</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.CallbackQueue.CallbackQueue">
+            function <span class="apidocSignatureSpan">intern.</span>CallbackQueue
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.intern.CallbackQueue.prototype">module intern.CallbackQueue.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.CallbackQueue.prototype.add">
+            function <span class="apidocSignatureSpan">intern.CallbackQueue.prototype.</span>add
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.CallbackQueue.prototype.drain">
+            function <span class="apidocSignatureSpan">intern.CallbackQueue.prototype.</span>drain
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.intern.DateObject">module intern.DateObject</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.DateObject.DateObject">
+            function <span class="apidocSignatureSpan">intern.</span>DateObject
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.DateObject.now">
+            function <span class="apidocSignatureSpan">intern.DateObject.</span>now
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.DateObject.parse">
+            function <span class="apidocSignatureSpan">intern.DateObject.</span>parse
+            <span class="apidocSignatureSpan">(string)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.intern.DateObject.prototype">module intern.DateObject.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.DateObject.prototype.add">
+            function <span class="apidocSignatureSpan">intern.DateObject.prototype.</span>add
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.DateObject.prototype.toDateString">
+            function <span class="apidocSignatureSpan">intern.DateObject.prototype.</span>toDateString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.DateObject.prototype.toISOString">
+            function <span class="apidocSignatureSpan">intern.DateObject.prototype.</span>toISOString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.DateObject.prototype.toJSON">
+            function <span class="apidocSignatureSpan">intern.DateObject.prototype.</span>toJSON
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.DateObject.prototype.toLocaleDateString">
+            function <span class="apidocSignatureSpan">intern.DateObject.prototype.</span>toLocaleDateString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.DateObject.prototype.toLocaleString">
+            function <span class="apidocSignatureSpan">intern.DateObject.prototype.</span>toLocaleString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.DateObject.prototype.toLocaleTimeString">
+            function <span class="apidocSignatureSpan">intern.DateObject.prototype.</span>toLocaleTimeString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.DateObject.prototype.toString">
+            function <span class="apidocSignatureSpan">intern.DateObject.prototype.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.DateObject.prototype.toTimeString">
+            function <span class="apidocSignatureSpan">intern.DateObject.prototype.</span>toTimeString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.DateObject.prototype.valueOf">
+            function <span class="apidocSignatureSpan">intern.DateObject.prototype.</span>valueOf
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.intern.Evented">module intern.Evented</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.Evented.Evented">
+            function <span class="apidocSignatureSpan">intern.</span>Evented
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.intern.Evented.prototype">module intern.Evented.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.Evented.prototype.emit">
+            function <span class="apidocSignatureSpan">intern.Evented.prototype.</span>emit
+            <span class="apidocSignatureSpan">(type)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.Evented.prototype.on">
+            function <span class="apidocSignatureSpan">intern.Evented.prototype.</span>on
+            <span class="apidocSignatureSpan">(type, listener)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.intern.Observable">module intern.Observable</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.Observable.Observable">
+            function <span class="apidocSignatureSpan">intern.</span>Observable
+            <span class="apidocSignatureSpan">(props)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.intern.Observable.prototype">module intern.Observable.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.Observable.prototype._dispatch">
+            function <span class="apidocSignatureSpan">intern.Observable.prototype.</span>_dispatch
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.Observable.prototype._isEqual">
+            function <span class="apidocSignatureSpan">intern.Observable.prototype.</span>_isEqual
+            <span class="apidocSignatureSpan">(a, b)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.Observable.prototype._notify">
+            function <span class="apidocSignatureSpan">intern.Observable.prototype.</span>_notify
+            <span class="apidocSignatureSpan">(property, newValue, oldValue)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.Observable.prototype._schedule">
+            function <span class="apidocSignatureSpan">intern.Observable.prototype.</span>_schedule
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.Observable.prototype.observe">
+            function <span class="apidocSignatureSpan">intern.Observable.prototype.</span>observe
+            <span class="apidocSignatureSpan">(property, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.intern.Promise">module intern.Promise</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.Promise.Promise">
+            function <span class="apidocSignatureSpan">intern.</span>Promise
+            <span class="apidocSignatureSpan">(initializer)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.Promise.Deferred">
+            function <span class="apidocSignatureSpan">intern.Promise.</span>Deferred
+            <span class="apidocSignatureSpan">(canceler)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.Promise.all">
+            function <span class="apidocSignatureSpan">intern.Promise.</span>all
+            <span class="apidocSignatureSpan">(iterable)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.Promise.reject">
+            function <span class="apidocSignatureSpan">intern.Promise.</span>reject
+            <span class="apidocSignatureSpan">(error)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.Promise.resolve">
+            function <span class="apidocSignatureSpan">intern.Promise.</span>resolve
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">intern.Promise.</span>State</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.intern.Promise.prototype">module intern.Promise.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.Promise.prototype.catch">
+            function <span class="apidocSignatureSpan">intern.Promise.prototype.</span>catch
+            <span class="apidocSignatureSpan">(onRejected)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.Promise.prototype.finally">
+            function <span class="apidocSignatureSpan">intern.Promise.prototype.</span>finally
+            <span class="apidocSignatureSpan">(onFulfilledOrRejected)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.Promise.prototype.progress">
+            function <span class="apidocSignatureSpan">intern.Promise.prototype.</span>progress
+            <span class="apidocSignatureSpan">(onProgress)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.intern.Registry">module intern.Registry</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.Registry.Registry">
+            function <span class="apidocSignatureSpan">intern.</span>Registry
+            <span class="apidocSignatureSpan">(defaultValue)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.intern.Registry.prototype">module intern.Registry.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.Registry.prototype.match">
+            function <span class="apidocSignatureSpan">intern.Registry.prototype.</span>match
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.Registry.prototype.register">
+            function <span class="apidocSignatureSpan">intern.Registry.prototype.</span>register
+            <span class="apidocSignatureSpan">(test, value, first)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.intern.Scheduler">module intern.Scheduler</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.Scheduler.Scheduler">
+            function <span class="apidocSignatureSpan">intern.</span>Scheduler
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.Scheduler.schedule">
+            function <span class="apidocSignatureSpan">intern.Scheduler.</span>schedule
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.intern.Scheduler.prototype">module intern.Scheduler.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.Scheduler.prototype.schedule">
+            function <span class="apidocSignatureSpan">intern.Scheduler.prototype.</span>schedule
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.intern.aspect">module intern.aspect</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.aspect.after">
+            function <span class="apidocSignatureSpan">intern.aspect.</span>after
+            <span class="apidocSignatureSpan">(target, methodName, advice)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.aspect.around">
+            function <span class="apidocSignatureSpan">intern.aspect.</span>around
+            <span class="apidocSignatureSpan">(target, methodName, advice)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.aspect.before">
+            function <span class="apidocSignatureSpan">intern.aspect.</span>before
+            <span class="apidocSignatureSpan">(target, methodName, advice)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.aspect.on">
+            function <span class="apidocSignatureSpan">intern.aspect.</span>on
+            <span class="apidocSignatureSpan">(target, methodName, advice)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.intern.cookie">module intern.cookie</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.cookie.getItem">
+            function <span class="apidocSignatureSpan">intern.cookie.</span>getItem
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.cookie.key">
+            function <span class="apidocSignatureSpan">intern.cookie.</span>key
+            <span class="apidocSignatureSpan">(index)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.cookie.removeItem">
+            function <span class="apidocSignatureSpan">intern.cookie.</span>removeItem
+            <span class="apidocSignatureSpan">(key, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.cookie.setItem">
+            function <span class="apidocSignatureSpan">intern.cookie.</span>setItem
+            <span class="apidocSignatureSpan">(key, data, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.intern.diff">module intern.diff</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.diff.Diff">
+            function <span class="apidocSignatureSpan">intern.diff.</span>Diff
+            <span class="apidocSignatureSpan">(ignoreWhitespace)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.diff.applyPatch">
+            function <span class="apidocSignatureSpan">intern.diff.</span>applyPatch
+            <span class="apidocSignatureSpan">(oldStr, uniDiff)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.diff.convertChangesToDMP">
+            function <span class="apidocSignatureSpan">intern.diff.</span>convertChangesToDMP
+            <span class="apidocSignatureSpan">(changes)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.diff.convertChangesToXML">
+            function <span class="apidocSignatureSpan">intern.diff.</span>convertChangesToXML
+            <span class="apidocSignatureSpan">(changes)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.diff.createPatch">
+            function <span class="apidocSignatureSpan">intern.diff.</span>createPatch
+            <span class="apidocSignatureSpan">(fileName, oldStr, newStr, oldHeader, newHeader)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.diff.diffChars">
+            function <span class="apidocSignatureSpan">intern.diff.</span>diffChars
+            <span class="apidocSignatureSpan">(oldStr, newStr)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.diff.diffCss">
+            function <span class="apidocSignatureSpan">intern.diff.</span>diffCss
+            <span class="apidocSignatureSpan">(oldStr, newStr)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.diff.diffLines">
+            function <span class="apidocSignatureSpan">intern.diff.</span>diffLines
+            <span class="apidocSignatureSpan">(oldStr, newStr)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.diff.diffWords">
+            function <span class="apidocSignatureSpan">intern.diff.</span>diffWords
+            <span class="apidocSignatureSpan">(oldStr, newStr)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.diff.diffWordsWithSpace">
+            function <span class="apidocSignatureSpan">intern.diff.</span>diffWordsWithSpace
+            <span class="apidocSignatureSpan">(oldStr, newStr)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.intern.dom">module intern.dom</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.dom.get">
+            function <span class="apidocSignatureSpan">intern.dom.</span>get
+            <span class="apidocSignatureSpan">(id, doc)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.intern.has">module intern.has</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.has.has">
+            function <span class="apidocSignatureSpan">intern.</span>has
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.has.add">
+            function <span class="apidocSignatureSpan">intern.has.</span>add
+            <span class="apidocSignatureSpan">(name, test, now, force)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.has.load">
+            function <span class="apidocSignatureSpan">intern.has.</span>load
+            <span class="apidocSignatureSpan">(resourceId, require, load)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.has.normalize">
+            function <span class="apidocSignatureSpan">intern.has.</span>normalize
+            <span class="apidocSignatureSpan">(resourceId, normalize)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.intern.io_query">module intern.io_query</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.io_query.objectToQuery">
+            function <span class="apidocSignatureSpan">intern.io_query.</span>objectToQuery
+            <span class="apidocSignatureSpan">(map)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.intern.lang">module intern.lang</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.lang.bind">
+            function <span class="apidocSignatureSpan">intern.lang.</span>bind
+            <span class="apidocSignatureSpan">(context, fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.lang.deepDelegate">
+            function <span class="apidocSignatureSpan">intern.lang.</span>deepDelegate
+            <span class="apidocSignatureSpan">(source, properties)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.lang.deepMixin">
+            function <span class="apidocSignatureSpan">intern.lang.</span>deepMixin
+            <span class="apidocSignatureSpan">(target, source)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.lang.delegate">
+            function <span class="apidocSignatureSpan">intern.lang.</span>delegate
+            <span class="apidocSignatureSpan">(object, properties)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.lang.getProperty">
+            function <span class="apidocSignatureSpan">intern.lang.</span>getProperty
+            <span class="apidocSignatureSpan">(object, propertyName, create)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.lang.getPropertyDescriptor">
+            function <span class="apidocSignatureSpan">intern.lang.</span>getPropertyDescriptor
+            <span class="apidocSignatureSpan">(object, property)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.lang.isEqual">
+            function <span class="apidocSignatureSpan">intern.lang.</span>isEqual
+            <span class="apidocSignatureSpan">(a, b)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.lang.mixin">
+            function <span class="apidocSignatureSpan">intern.lang.</span>mixin
+            <span class="apidocSignatureSpan">(target)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.lang.partial">
+            function <span class="apidocSignatureSpan">intern.lang.</span>partial
+            <span class="apidocSignatureSpan">(fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.lang.pullFromArray">
+            function <span class="apidocSignatureSpan">intern.lang.</span>pullFromArray
+            <span class="apidocSignatureSpan">(haystack, needle)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.lang.setProperty">
+            function <span class="apidocSignatureSpan">intern.lang.</span>setProperty
+            <span class="apidocSignatureSpan">(object, propertyName, value)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.intern.loader">module intern.loader</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.loader.loader">
+            function <span class="apidocSignatureSpan">intern.</span>loader
+            <span class="apidocSignatureSpan">(config, dependencies, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.loader.cache">
+            function <span class="apidocSignatureSpan">intern.loader.</span>cache
+            <span class="apidocSignatureSpan">(cache)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.loader.config">
+            function <span class="apidocSignatureSpan">intern.loader.</span>config
+            <span class="apidocSignatureSpan">(config)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.loader.has">
+            function <span class="apidocSignatureSpan">intern.loader.</span>has
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.loader.inspect">
+            function <span class="apidocSignatureSpan">intern.loader.</span>inspect
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.loader.nodeRequire">
+            function <span class="apidocSignatureSpan">intern.loader.</span>nodeRequire
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.loader.signal">
+            function <span class="apidocSignatureSpan">intern.loader.</span>signal
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.loader.toAbsMid">
+            function <span class="apidocSignatureSpan">intern.loader.</span>toAbsMid
+            <span class="apidocSignatureSpan">(mid, referenceModule)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.loader.toUrl">
+            function <span class="apidocSignatureSpan">intern.loader.</span>toUrl
+            <span class="apidocSignatureSpan">(name, referenceModule)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.loader.undef">
+            function <span class="apidocSignatureSpan">intern.loader.</span>undef
+            <span class="apidocSignatureSpan">(id)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">intern.loader.</span>baseUrl</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.intern.node">module intern.node</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.node.load">
+            function <span class="apidocSignatureSpan">intern.node.</span>load
+            <span class="apidocSignatureSpan">(id, contextRequire, load)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.node.normalize">
+            function <span class="apidocSignatureSpan">intern.node.</span>normalize
+            <span class="apidocSignatureSpan">(id, normalize)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.intern.on">module intern.on</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.on.on">
+            function <span class="apidocSignatureSpan">intern.</span>on
+            <span class="apidocSignatureSpan">(target, type, listener, capture)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.on.emit">
+            function <span class="apidocSignatureSpan">intern.on.</span>emit
+            <span class="apidocSignatureSpan">(target, type, event)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.on.parse">
+            function <span class="apidocSignatureSpan">intern.on.</span>parse
+            <span class="apidocSignatureSpan">(target, type, listener, context, addListener, capture)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.intern.request">module intern.request</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.request.request">
+            function <span class="apidocSignatureSpan">intern.</span>request
+            <span class="apidocSignatureSpan">(url, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.request.delete">
+            function <span class="apidocSignatureSpan">intern.request.</span>delete
+            <span class="apidocSignatureSpan">(url, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.request.get">
+            function <span class="apidocSignatureSpan">intern.request.</span>get
+            <span class="apidocSignatureSpan">(url, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.request.post">
+            function <span class="apidocSignatureSpan">intern.request.</span>post
+            <span class="apidocSignatureSpan">(url, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.request.put">
+            function <span class="apidocSignatureSpan">intern.request.</span>put
+            <span class="apidocSignatureSpan">(url, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">intern.request.</span>filterRegistry</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">intern.request.</span>providerRegistry</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.intern.string">module intern.string</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.string.count">
+            function <span class="apidocSignatureSpan">intern.string.</span>count
+            <span class="apidocSignatureSpan">(haystack, needle)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.string.escapeRegExpString">
+            function <span class="apidocSignatureSpan">intern.string.</span>escapeRegExpString
+            <span class="apidocSignatureSpan">(string)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.string.pad">
+            function <span class="apidocSignatureSpan">intern.string.</span>pad
+            <span class="apidocSignatureSpan">(text, size, character)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.string.padl">
+            function <span class="apidocSignatureSpan">intern.string.</span>padl
+            <span class="apidocSignatureSpan">(text, size, character)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.string.padr">
+            function <span class="apidocSignatureSpan">intern.string.</span>padr
+            <span class="apidocSignatureSpan">(text, size, character)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.string.repeat">
+            function <span class="apidocSignatureSpan">intern.string.</span>repeat
+            <span class="apidocSignatureSpan">(string, times)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.string.substitute">
+            function <span class="apidocSignatureSpan">intern.string.</span>substitute
+            <span class="apidocSignatureSpan">(template, map, transform, context)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.intern.text">module intern.text</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.text.load">
+            function <span class="apidocSignatureSpan">intern.text.</span>load
+            <span class="apidocSignatureSpan">(resourceId, require, load)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.intern.topic">module intern.topic</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.topic.publish">
+            function <span class="apidocSignatureSpan">intern.topic.</span>publish
+            <span class="apidocSignatureSpan">(topic)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.intern.topic.subscribe">
+            function <span class="apidocSignatureSpan">intern.topic.</span>subscribe
+            <span class="apidocSignatureSpan">(topic, listener)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.intern" id="apidoc.module.intern">module intern</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.intern.CallbackQueue" id="apidoc.element.intern.CallbackQueue">
+        function <span class="apidocSignatureSpan">intern.</span>CallbackQueue
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function CallbackQueue() {
+    this._callbacks = [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.DateObject" id="apidoc.element.intern.DateObject">
+        function <span class="apidocSignatureSpan">intern.</span>DateObject
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function DateObject(value) {
+    var _date;
+    if (!arguments.length) {
+        _date = new Date();
+    }
+    else if (value instanceof Date) {
+        _date = new Date(+value);
+    }
+    else if (typeof value === &#x27;number&#x27; || typeof value === &#x27;string&#x27;) {
+        _date = new Date(value);
+    }
+    else {
+        _date = new Date(value.year, value.month - 1, value.dayOfMonth || 1, value.hours || 0, value.minutes || 0, value.seconds
+ || 0, value.milliseconds || 0);
+    }
+    Object.defineProperty(this, &#x27;_date&#x27;, {
+        configurable: true,
+        enumerable: false,
+        value: _date,
+        writable: true
+    });
+    var self = this;
+    Object.defineProperty(this, &#x27;utc&#x27;, {
+        value: {
+            get isLeapYear() {
+                return isLeapYear(this.year);
+            },
+            get daysInMonth() {
+                var month = this.month;
+                if (month === 2 &#x26;&#x26; this.isLeapYear) {
+                    return 29;
+                }
+                return days[month];
+            },
+            get year() {
+                return self._date.getUTCFullYear();
+            },
+            set year(year) {
+                self._date.setUTCFullYear(year);
+            },
+            get month() {
+                return self._date.getUTCMonth() + 1;
+            },
+            set month(month) {
+                self._date.setUTCMonth(month - 1);
+            },
+            get dayOfMonth() {
+                return self._date.getUTCDate();
+            },
+            set dayOfMonth(day) {
+                self._date.setUTCDate(day);
+            },
+            get hours() {
+                return self._date.getUTCHours();
+            },
+            set hours(hours) {
+                self._date.setUTCHours(hours);
+            },
+            get minutes() {
+                return self._date.getUTCMinutes();
+            },
+            set minutes(minutes) {
+                self._date.setUTCMinutes(minutes);
+            },
+            get seconds() {
+                return self._date.getUTCSeconds();
+            },
+            set seconds(seconds) {
+                self._date.setUTCSeconds(seconds);
+            },
+            get milliseconds() {
+                return self._date.getUTCMilliseconds();
+            },
+            set milliseconds(milliseconds) {
+                self._date.setUTCMilliseconds(milliseconds);
+            },
+            get dayOfWeek() {
+                return self._date.getUTCDay();
+            },
+            toString: function () {
+                return self._date.toUTCString();
+            }
+        },
+        enumerable: true
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.Evented" id="apidoc.element.intern.Evented">
+        function <span class="apidocSignatureSpan">intern.</span>Evented
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Evented() {
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.Observable" id="apidoc.element.intern.Observable">
+        function <span class="apidocSignatureSpan">intern.</span>Observable
+        <span class="apidocSignatureSpan">(props)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Observable(props) {
+    if (props) {
+        lang.mixin(this, props);
+    }
+    Object.defineProperties(this, {
+        _callbacks: {
+            value: {}
+        },
+        _dispatch: {
+            configurable: true,
+            value: this._dispatch.bind(this),
+            writable: true
+        },
+        _notifications: {
+            value: Object.create(null),
+            writable: true
+        },
+        _timer: {
+            value: null,
+            writable: true
+        }
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.Promise" id="apidoc.element.intern.Promise">
+        function <span class="apidocSignatureSpan">intern.</span>Promise
+        <span class="apidocSignatureSpan">(initializer)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Promise(initializer) {
+    var state = Promise.State.PENDING;
+    Object.defineProperty(this, &#x27;state&#x27;, {
+        get: function () {
+            return state;
+        }
+    });
+    function isResolved() {
+        return state !== Promise.State.PENDING || isChained;
+    }
+    var isChained = false;
+    var resolvedValue;
+    var callbacks = [];
+    var whenFinished = function (callback) {
+        callbacks.push(callback);
+    };
+    var progressCallbacks = [];
+    var whenProgress = function (callback) {
+        progressCallbacks.push(callback);
+    };
+    var canceler;
+    var enqueue = (function () {
+        function originalSchedule() {
+            schedule = function () { };
+            nextTick(function run() {
+                try {
+                    var callback;
+                    while ((callback = queue.shift())) {
+                        callback();
+                    }
+                }
+                finally {
+                    if (queue.length) {
+                        run();
+                    }
+                    else {
+                        schedule = originalSchedule;
+                    }
+                }
+            });
+        }
+        var queue = [];
+        var schedule = originalSchedule;
+        return function (callback) {
+            queue.push(callback);
+            schedule();
+        };
+    })();
+    var resolve = function (newState, value) {
+        if (isResolved()) {
+            return;
+        }
+        if (isPromise(value)) {
+            if (value === this) {
+                settle(Promise.State.REJECTED, new TypeError(&#x27;Cannot chain a promise to itself&#x27;));
+                return;
+            }
+            try {
+                value.then(settle.bind(null, Promise.State.FULFILLED), settle.bind(null, Promise.State.REJECTED));
+                isChained = true;
+                canceler = value.cancel;
+            }
+            catch (error) {
+                settle(Promise.State.REJECTED, error);
+                return;
+            }
+        }
+        else {
+            settle(newState, value);
+        }
+    }.bind(this);
+    function settle(newState, value) {
+        if (state !== Promise.State.PENDING) {
+            return;
+        }
+        state = newState;
+        resolvedValue = value;
+        whenFinished = enqueue;
+        whenProgress = function () { };
+        enqueue(function () {
+            runCallbacks(callbacks);
+            callbacks = progressCallbacks = null;
+        });
+    }
+    this.cancel = function (reason) {
+        if (state !== Promise.State.PENDING) {
+            return;
+        }
+        if (!reason) {
+            reason = new Error(&#x27;Cancelled&#x27;);
+            reason.name = &#x27;CancelError&#x27;;
+        }
+        if (!canceler) {
+            settle(Promise.State.REJECTED, reason);
+            return Promise.reject(reason);
+        }
+        try {
+            resolve(Promise.State.FULFILLED, canceler(reason));
+        }
+        catch (error) {
+            settle(Promise.State.REJECTED, error);
+            return Promise.reject(error);
+        }
+    };
+    this.then = function (onFulfilled, onRejected, onProgress) {
+        return new Promise(function (resolve, reject, progress, setCanceler) {
+            setCanceler(function (reason) {
+                if (canceler) {
+                    resolve(canceler(reason));
+                }
+                else {
+                    throw reason;
+                }
+            });
+            whenProgress(function (data) {
+                try {
+                    if (typeof onProgress === &#x27;function&#x27;) {
+                        progress(onProgress(data));
+                    }
+                    else {
+                        progress(data);
+                    }
+                }
+                catch (error) {
+                    if (error.name !== &#x27;StopProgressPropagation&#x27;) {
+                        throw error;
+                    }
+                }
+            });
+            whenFinished(function () {
+                var callback = state === Promise.State.REJECTED ? onRejected : onFulfilled; ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.Registry" id="apidoc.element.intern.Registry">
+        function <span class="apidocSignatureSpan">intern.</span>Registry
+        <span class="apidocSignatureSpan">(defaultValue)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Registry(defaultValue) {
+    this._entries = [];
+    this._defaultValue = defaultValue;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.Scheduler" id="apidoc.element.intern.Scheduler">
+        function <span class="apidocSignatureSpan">intern.</span>Scheduler
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Scheduler() {
+    this._callbacks = new CallbackQueue();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.has" id="apidoc.element.intern.has">
+        function <span class="apidocSignatureSpan">intern.</span>has
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">has = function (name) {
+    return typeof hasCache[name] === &#x27;function&#x27; ? (hasCache[name] = hasCache[name](global, document, element)) : hasCache[name];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * Gets the name of the first argument from a function&#x27;s source.
+ *
+ * @private
+ * @param {Function} fn The function.
+ * @returns {string} The argument name.
+ */
+function getFirstArgument(fn) {
+  return (!_.<span class="apidocCodeKeywordSpan">has</span>(fn, &#x27;toString&#x27;) &#x26;&#x26;
+    (/^[\s(]*function[^(]*\(([^\s,)]+)/.exec(fn) || 0)[1]) || &#x27;&#x27;;
+}
+
+/**
+ * Computes the arithmetic mean of a sample.
+ *
+ * @private
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.loader" id="apidoc.element.intern.loader">
+        function <span class="apidocSignatureSpan">intern.</span>loader
+        <span class="apidocSignatureSpan">(config, dependencies, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">loader = function (config, dependencies, callback) {
+    if (Array.isArray(config) || typeof config === &#x27;string&#x27;) {
+        callback = dependencies;
+        dependencies = config;
+        config = {};
+    }
+    if (has(&#x27;loader-configurable&#x27;)) {
+        configure(config);
+    }
+    contextRequire(dependencies, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.on" id="apidoc.element.intern.on">
+        function <span class="apidocSignatureSpan">intern.</span>on
+        <span class="apidocSignatureSpan">(target, type, listener, capture)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">on = function (target, type, listener, capture) {
+    if (typeof target.on === &#x27;function&#x27; &#x26;&#x26; typeof type !== &#x27;function&#x27; &#x26;&#x26; !target.nodeType) {
+        return target.on(type, listener, capture);
+    }
+    return on.parse(target, type, listener, this, addListener, capture);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+					setCanceler(function (reason) {
+						benchmark.error = reason;
+						benchmark.abort();
+
+						throw reason;
+					});
+
+					benchmark.<span class="apidocCodeKeywordSpan">on</span>(&#x27;abort&#x27;, function () {
+						reject(benchmark.error);
+					});
+
+					benchmark.on(&#x27;error&#x27;, function () {
+						reject(benchmark.error);
+					});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.request" id="apidoc.element.intern.request">
+        function <span class="apidocSignatureSpan">intern.</span>request
+        <span class="apidocSignatureSpan">(url, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">request = function (url, options) {
+    if (options === void 0) { options = {}; }
+    var args = Array.prototype.slice.call(arguments, 0);
+    var promise = request.providerRegistry.match(arguments).apply(null, arguments).then(function (response) {
+        args.unshift(response);
+        return Promise.resolve(request.filterRegistry.match(args).apply(null, args)).then(function (filterResponse) {
+            response.data = filterResponse.data;
+            return response;
+        });
+    });
+    promise.data = promise.then(function (response) {
+        return response.data;
+    });
+    return promise;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.intern.CallbackQueue" id="apidoc.module.intern.CallbackQueue">module intern.CallbackQueue</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.intern.CallbackQueue.CallbackQueue" id="apidoc.element.intern.CallbackQueue.CallbackQueue">
+        function <span class="apidocSignatureSpan">intern.</span>CallbackQueue
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function CallbackQueue() {
+    this._callbacks = [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.intern.CallbackQueue.prototype" id="apidoc.module.intern.CallbackQueue.prototype">module intern.CallbackQueue.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.intern.CallbackQueue.prototype.add" id="apidoc.element.intern.CallbackQueue.prototype.add">
+        function <span class="apidocSignatureSpan">intern.CallbackQueue.prototype.</span>add
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">add = function (callback) {
+    var _callback = {
+        active: true,
+        callback: callback
+    };
+    this._callbacks.push(_callback);
+    callback = null;
+    return {
+        remove: function () {
+            this.remove = function () { };
+            _callback.active = false;
+            _callback = null;
+        }
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	glob,
+	pathUtil,
+	hook,
+	Instrumenter,
+	sourceMap,
+	fs
+) {
+	has.<span class="apidocCodeKeywordSpan">add</span>(&#x27;function-name&#x27;, function () {
+		function foo() {}
+		return foo.name === &#x27;foo&#x27;;
+	});
+
+	var instrumentationSourceMap = {};
+	var fileSourceMaps = {};
+	var fileSources = {};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.CallbackQueue.prototype.drain" id="apidoc.element.intern.CallbackQueue.prototype.drain">
+        function <span class="apidocSignatureSpan">intern.CallbackQueue.prototype.</span>drain
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">drain = function () {
+    var args = [];
+    for (var _i = 0; _i &#x3c; arguments.length; _i++) {
+        args[_i - 0] = arguments[_i];
+    }
+    var callbacks = this._callbacks;
+    var item;
+    this._callbacks = [];
+    for (var i = 0; i &#x3c; callbacks.length; i++) {
+        item = callbacks[i];
+        if (item &#x26;&#x26; item.active) {
+            item.callback.apply(null, args);
+        }
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    else {
+var queue = new CallbackQueue();
+if (has(&#x27;dom-mutationobserver&#x27;)) {
+    nextTick = (function () {
+        var MutationObserver = this.MutationObserver || this.WebKitMutationObserver;
+        var element = document.createElement(&#x27;div&#x27;);
+        var observer = new MutationObserver(function () {
+            queue.<span class="apidocCodeKeywordSpan">drain</span>();
+        });
+        observer.observe(element, { attributes: true });
+        return function (callback) {
+            var handle = queue.add(callback);
+            element.setAttribute(&#x27;drainQueue&#x27;, &#x27;1&#x27;);
+            return handle;
+        };
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.intern.DateObject" id="apidoc.module.intern.DateObject">module intern.DateObject</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.intern.DateObject.DateObject" id="apidoc.element.intern.DateObject.DateObject">
+        function <span class="apidocSignatureSpan">intern.</span>DateObject
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function DateObject(value) {
+    var _date;
+    if (!arguments.length) {
+        _date = new Date();
+    }
+    else if (value instanceof Date) {
+        _date = new Date(+value);
+    }
+    else if (typeof value === &#x27;number&#x27; || typeof value === &#x27;string&#x27;) {
+        _date = new Date(value);
+    }
+    else {
+        _date = new Date(value.year, value.month - 1, value.dayOfMonth || 1, value.hours || 0, value.minutes || 0, value.seconds
+ || 0, value.milliseconds || 0);
+    }
+    Object.defineProperty(this, &#x27;_date&#x27;, {
+        configurable: true,
+        enumerable: false,
+        value: _date,
+        writable: true
+    });
+    var self = this;
+    Object.defineProperty(this, &#x27;utc&#x27;, {
+        value: {
+            get isLeapYear() {
+                return isLeapYear(this.year);
+            },
+            get daysInMonth() {
+                var month = this.month;
+                if (month === 2 &#x26;&#x26; this.isLeapYear) {
+                    return 29;
+                }
+                return days[month];
+            },
+            get year() {
+                return self._date.getUTCFullYear();
+            },
+            set year(year) {
+                self._date.setUTCFullYear(year);
+            },
+            get month() {
+                return self._date.getUTCMonth() + 1;
+            },
+            set month(month) {
+                self._date.setUTCMonth(month - 1);
+            },
+            get dayOfMonth() {
+                return self._date.getUTCDate();
+            },
+            set dayOfMonth(day) {
+                self._date.setUTCDate(day);
+            },
+            get hours() {
+                return self._date.getUTCHours();
+            },
+            set hours(hours) {
+                self._date.setUTCHours(hours);
+            },
+            get minutes() {
+                return self._date.getUTCMinutes();
+            },
+            set minutes(minutes) {
+                self._date.setUTCMinutes(minutes);
+            },
+            get seconds() {
+                return self._date.getUTCSeconds();
+            },
+            set seconds(seconds) {
+                self._date.setUTCSeconds(seconds);
+            },
+            get milliseconds() {
+                return self._date.getUTCMilliseconds();
+            },
+            set milliseconds(milliseconds) {
+                self._date.setUTCMilliseconds(milliseconds);
+            },
+            get dayOfWeek() {
+                return self._date.getUTCDay();
+            },
+            toString: function () {
+                return self._date.toUTCString();
+            }
+        },
+        enumerable: true
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.DateObject.now" id="apidoc.element.intern.DateObject.now">
+        function <span class="apidocSignatureSpan">intern.DateObject.</span>now
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">now = function () {
+    return new DateObject(Date.now());
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+				// A heartbeat command is sent immediately when the interval is set because it is unknown how long ago
+				// the last command was sent and it simplifies the implementation by requiring only one call to
+				// `setTimeout`
+				var self = this;
+				(function sendHeartbeat() {
+					var timeoutId;
+					var cancelled = false;
+					var startTime = Date.<span class="apidocCodeKeywordSpan">now</span>();
+
+					self._heartbeatIntervalHandle = {
+						remove: function () {
+							cancelled = true;
+							clearTimeout(timeoutId);
+						}
+					};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.DateObject.parse" id="apidoc.element.intern.DateObject.parse">
+        function <span class="apidocSignatureSpan">intern.DateObject.</span>parse
+        <span class="apidocSignatureSpan">(string)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parse = function (string) {
+    return new DateObject(Date.parse(string));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+			function handleError(error) {
+				self.error = error;
+				return self.reporterManager.emit(&#x27;suiteError&#x27;, self, error).then(function () {
+					dfd.reject(error);
+				});
+			}
+
+			var proxyBasePath = urlUtil.<span class="apidocCodeKeywordSpan">parse</span>(config.proxyUrl).pathname;
+
+			var clientReporter = this.config.runnerClientReporter;
+			if (typeof clientReporter === &#x27;object&#x27;) {
+				// Need to mixin the properties of `clientReporter` to a new object before stringify because
+				// stringify only serialises an object’s own properties
+				clientReporter = JSON.stringify(lang.mixin({}, clientReporter));
+			}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.intern.DateObject.prototype" id="apidoc.module.intern.DateObject.prototype">module intern.DateObject.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.intern.DateObject.prototype.add" id="apidoc.element.intern.DateObject.prototype.add">
+        function <span class="apidocSignatureSpan">intern.DateObject.prototype.</span>add
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">add = function (value) {
+    var result = new DateObject(this);
+    operationOrder.forEach(function (property) {
+        if (!(property in value)) {
+            return;
+        }
+        result[property] += value[property];
+    });
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	glob,
+	pathUtil,
+	hook,
+	Instrumenter,
+	sourceMap,
+	fs
+) {
+	has.<span class="apidocCodeKeywordSpan">add</span>(&#x27;function-name&#x27;, function () {
+		function foo() {}
+		return foo.name === &#x27;foo&#x27;;
+	});
+
+	var instrumentationSourceMap = {};
+	var fileSourceMaps = {};
+	var fileSources = {};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.DateObject.prototype.toDateString" id="apidoc.element.intern.DateObject.prototype.toDateString">
+        function <span class="apidocSignatureSpan">intern.DateObject.prototype.</span>toDateString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toDateString = function () {
+    return this._date.toDateString();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    });
+    return result;
+};
+DateObject.prototype.toString = function () {
+    return this._date.toString();
+};
+DateObject.prototype.toDateString = function () {
+    return this._date.<span class="apidocCodeKeywordSpan">toDateString</span>();
+};
+DateObject.prototype.toTimeString = function () {
+    return this._date.toTimeString();
+};
+DateObject.prototype.toLocaleString = function () {
+    return this._date.toLocaleString();
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.DateObject.prototype.toISOString" id="apidoc.element.intern.DateObject.prototype.toISOString">
+        function <span class="apidocSignatureSpan">intern.DateObject.prototype.</span>toISOString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toISOString = function () {
+    return this._date.toISOString();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	 */
+	function serialize(object) {
+		var indent = &#x27;&#x27;;
+		var output = &#x27;&#x27;;
+		var stack = [];
+
+		function writeDate(value) {
+			output += value.<span class="apidocCodeKeywordSpan">toISOString</span>();
+		}
+
+		function writeObject(object) {
+			// jshint maxcomplexity:12
+
+			if (stack.indexOf(object) &#x3e; -1) {
+				output += &#x27;[Circular]&#x27;;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.DateObject.prototype.toJSON" id="apidoc.element.intern.DateObject.prototype.toJSON">
+        function <span class="apidocSignatureSpan">intern.DateObject.prototype.</span>toJSON
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toJSON = function (key) {
+    return this._date.toJSON(key);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+			return {
+				name: this.name,
+				id: this.id,
+				parentId: this.parentId,
+				sessionId: this.sessionId,
+				hasParent: Boolean(this.parent),
+				tests: this.tests.map(function (test) {
+					return test.<span class="apidocCodeKeywordSpan">toJSON</span>();
+				}),
+				timeElapsed: this.timeElapsed,
+				numTests: this.numTests,
+				numFailedTests: this.numFailedTests,
+				numSkippedTests: this.numSkippedTests,
+				skipped: this.skipped,
+				error: this.error ? {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.DateObject.prototype.toLocaleDateString" id="apidoc.element.intern.DateObject.prototype.toLocaleDateString">
+        function <span class="apidocSignatureSpan">intern.DateObject.prototype.</span>toLocaleDateString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toLocaleDateString = function () {
+    return this._date.toLocaleDateString();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+DateObject.prototype.toTimeString = function () {
+    return this._date.toTimeString();
+};
+DateObject.prototype.toLocaleString = function () {
+    return this._date.toLocaleString();
+};
+DateObject.prototype.toLocaleDateString = function () {
+    return this._date.<span class="apidocCodeKeywordSpan">toLocaleDateString</span>();
+};
+DateObject.prototype.toLocaleTimeString = function () {
+    return this._date.toLocaleTimeString();
+};
+DateObject.prototype.toISOString = function () {
+    return this._date.toISOString();
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.DateObject.prototype.toLocaleString" id="apidoc.element.intern.DateObject.prototype.toLocaleString">
+        function <span class="apidocSignatureSpan">intern.DateObject.prototype.</span>toLocaleString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toLocaleString = function () {
+    return this._date.toLocaleString();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+DateObject.prototype.toDateString = function () {
+    return this._date.toDateString();
+};
+DateObject.prototype.toTimeString = function () {
+    return this._date.toTimeString();
+};
+DateObject.prototype.toLocaleString = function () {
+    return this._date.<span class="apidocCodeKeywordSpan">toLocaleString</span>();
+};
+DateObject.prototype.toLocaleDateString = function () {
+    return this._date.toLocaleDateString();
+};
+DateObject.prototype.toLocaleTimeString = function () {
+    return this._date.toLocaleTimeString();
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.DateObject.prototype.toLocaleTimeString" id="apidoc.element.intern.DateObject.prototype.toLocaleTimeString">
+        function <span class="apidocSignatureSpan">intern.DateObject.prototype.</span>toLocaleTimeString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toLocaleTimeString = function () {
+    return this._date.toLocaleTimeString();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+DateObject.prototype.toLocaleString = function () {
+    return this._date.toLocaleString();
+};
+DateObject.prototype.toLocaleDateString = function () {
+    return this._date.toLocaleDateString();
+};
+DateObject.prototype.toLocaleTimeString = function () {
+    return this._date.<span class="apidocCodeKeywordSpan">toLocaleTimeString</span>();
+};
+DateObject.prototype.toISOString = function () {
+    return this._date.toISOString();
+};
+DateObject.prototype.toJSON = function (key) {
+    return this._date.toJSON(key);
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.DateObject.prototype.toString" id="apidoc.element.intern.DateObject.prototype.toString">
+        function <span class="apidocSignatureSpan">intern.DateObject.prototype.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return this._date.toString();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+								self._send404(response);
+								return;
+							}
+
+							// providing `wholePath` to the instrumenter instead of a partial filename is necessary because
+							// lcov.info requires full path names as per the lcov spec
+							data = util.instrument(
+								data.<span class="apidocCodeKeywordSpan">toString</span>(&#x27;utf-8&#x27;),
+								wholePath,
+								self.config.instrumenterOptions
+							);
+							self._codeCache[wholePath] = {
+								// strictly speaking mtime could reflect a previous version, assume those race conditions are rare
+								mtime: mtime,
+								data: data
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.DateObject.prototype.toTimeString" id="apidoc.element.intern.DateObject.prototype.toTimeString">
+        function <span class="apidocSignatureSpan">intern.DateObject.prototype.</span>toTimeString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toTimeString = function () {
+    return this._date.toTimeString();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+DateObject.prototype.toString = function () {
+    return this._date.toString();
+};
+DateObject.prototype.toDateString = function () {
+    return this._date.toDateString();
+};
+DateObject.prototype.toTimeString = function () {
+    return this._date.<span class="apidocCodeKeywordSpan">toTimeString</span>();
+};
+DateObject.prototype.toLocaleString = function () {
+    return this._date.toLocaleString();
+};
+DateObject.prototype.toLocaleDateString = function () {
+    return this._date.toLocaleDateString();
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.DateObject.prototype.valueOf" id="apidoc.element.intern.DateObject.prototype.valueOf">
+        function <span class="apidocSignatureSpan">intern.DateObject.prototype.</span>valueOf
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">valueOf = function () {
+    return this._date.valueOf();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        DateObject.prototype.toISOString = function () {
+            return this._date.toISOString();
+        };
+        DateObject.prototype.toJSON = function (key) {
+            return this._date.toJSON(key);
+        };
+        DateObject.prototype.valueOf = function () {
+            return this._date.<span class="apidocCodeKeywordSpan">valueOf</span>();
+        };
+        return DateObject;
+    })();
+    return DateObject;
+});
+//# sourceMappingURL=_debug/DateObject.js.map
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.intern.Evented" id="apidoc.module.intern.Evented">module intern.Evented</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.intern.Evented.Evented" id="apidoc.element.intern.Evented.Evented">
+        function <span class="apidocSignatureSpan">intern.</span>Evented
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Evented() {
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.intern.Evented.prototype" id="apidoc.module.intern.Evented.prototype">module intern.Evented.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.intern.Evented.prototype.emit" id="apidoc.element.intern.Evented.prototype.emit">
+        function <span class="apidocSignatureSpan">intern.Evented.prototype.</span>emit
+        <span class="apidocSignatureSpan">(type)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">emit = function (type) {
+    var args = [];
+    for (var _i = 1; _i &#x3c; arguments.length; _i++) {
+        args[_i - 1] = arguments[_i];
+    }
+    type = &#x27;__on&#x27; + type;
+    var method = this[type];
+    if (method) {
+        return method.apply(this, args);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+						suite = arguments[1];
+						// The suite sent by the server is the root suite for the client-side unit tests; add its tests
+						// to the runner-side client suite
+						if (!suite.hasParent) {
+							suite.tests.forEach(function (test) {
+								self.tests.push(test);
+							});
+							return reporterManager.<span class="apidocCodeKeywordSpan">emit</span>(&#x27;suiteStart&#x27;, self);
+						}
+						return forward();
+
+					case &#x27;suiteEnd&#x27;:
+						suite = arguments[1];
+						self.skipped = suite.skipped;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.Evented.prototype.on" id="apidoc.element.intern.Evented.prototype.on">
+        function <span class="apidocSignatureSpan">intern.Evented.prototype.</span>on
+        <span class="apidocSignatureSpan">(type, listener)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">on = function (type, listener) {
+    var _this = this;
+    return on.parse(this, type, listener, this, function (target, type) {
+        var name = &#x27;__on&#x27; + type;
+        if (!_this[name]) {
+            Object.defineProperty(_this, name, {
+                configurable: true,
+                value: undefined,
+                writable: true
+            });
+        }
+        return aspect.on(_this, &#x27;__on&#x27; + type, listener);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+					setCanceler(function (reason) {
+						benchmark.error = reason;
+						benchmark.abort();
+
+						throw reason;
+					});
+
+					benchmark.<span class="apidocCodeKeywordSpan">on</span>(&#x27;abort&#x27;, function () {
+						reject(benchmark.error);
+					});
+
+					benchmark.on(&#x27;error&#x27;, function () {
+						reject(benchmark.error);
+					});
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.intern.Observable" id="apidoc.module.intern.Observable">module intern.Observable</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.intern.Observable.Observable" id="apidoc.element.intern.Observable.Observable">
+        function <span class="apidocSignatureSpan">intern.</span>Observable
+        <span class="apidocSignatureSpan">(props)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Observable(props) {
+    if (props) {
+        lang.mixin(this, props);
+    }
+    Object.defineProperties(this, {
+        _callbacks: {
+            value: {}
+        },
+        _dispatch: {
+            configurable: true,
+            value: this._dispatch.bind(this),
+            writable: true
+        },
+        _notifications: {
+            value: Object.create(null),
+            writable: true
+        },
+        _timer: {
+            value: null,
+            writable: true
+        }
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.intern.Observable.prototype" id="apidoc.module.intern.Observable.prototype">module intern.Observable.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.intern.Observable.prototype._dispatch" id="apidoc.element.intern.Observable.prototype._dispatch">
+        function <span class="apidocSignatureSpan">intern.Observable.prototype.</span>_dispatch
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_dispatch = function () {
+    if (this._timer) {
+        this._timer.remove();
+        this._timer = null;
+    }
+    var notifications = this._notifications;
+    this._notifications = Object.create(null);
+    for (var property in notifications) {
+        var notification = notifications[property];
+        if (this._isEqual(notification.oldValue, notification.newValue)) {
+            continue;
+        }
+        var callback;
+        for (var i = 0; (callback = notification.callbacks[i]); i++) {
+            if (!callback.removed) {
+                callback.callback.call(this, notification.newValue, notification.oldValue);
+            }
+        }
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.Observable.prototype._isEqual" id="apidoc.element.intern.Observable.prototype._isEqual">
+        function <span class="apidocSignatureSpan">intern.Observable.prototype.</span>_isEqual
+        <span class="apidocSignatureSpan">(a, b)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_isEqual = function (a, b) {
+    return lang.isEqual(a, b);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    this._timer.remove();
+    this._timer = null;
+}
+var notifications = this._notifications;
+this._notifications = Object.create(null);
+for (var property in notifications) {
+    var notification = notifications[property];
+    if (this.<span class="apidocCodeKeywordSpan">_isEqual</span>(notification.oldValue, notification.newValue)) {
+        continue;
+    }
+    var callback;
+    for (var i = 0; (callback = notification.callbacks[i]); i++) {
+        if (!callback.removed) {
+            callback.callback.call(this, notification.newValue, notification.oldValue);
+        }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.Observable.prototype._notify" id="apidoc.element.intern.Observable.prototype._notify">
+        function <span class="apidocSignatureSpan">intern.Observable.prototype.</span>_notify
+        <span class="apidocSignatureSpan">(property, newValue, oldValue)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_notify = function (property, newValue, oldValue) {
+    var callbacks = this._callbacks[property];
+    if (!callbacks || !callbacks.length) {
+        return;
+    }
+    var notification = this._notifications[property];
+    if (notification) {
+        notification.newValue = newValue;
+    }
+    else {
+        this._notifications[property] = {
+            newValue: newValue,
+            oldValue: oldValue,
+            callbacks: callbacks.slice(0)
+        };
+    }
+    this._schedule();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+if (oldDescriptor &#x26;&#x26; !(&#x27;value&#x27; in oldDescriptor)) {
+    descriptor.get = oldDescriptor.get;
+    if (oldDescriptor.set) {
+        descriptor.set = function (value) {
+            oldDescriptor.set.apply(this, arguments);
+            var newValue = descriptor.get.call(this);
+            this.<span class="apidocCodeKeywordSpan">_notify</span>(property, newValue, currentValue);
+            currentValue = newValue;
+        };
+    }
+}
+else {
+    descriptor.get = function () {
+        return currentValue;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.Observable.prototype._schedule" id="apidoc.element.intern.Observable.prototype._schedule">
+        function <span class="apidocSignatureSpan">intern.Observable.prototype.</span>_schedule
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_schedule = function () {
+    if (!this._timer) {
+        this._timer = Scheduler.schedule(this._dispatch);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    else {
+        this._notifications[property] = {
+            newValue: newValue,
+            oldValue: oldValue,
+            callbacks: callbacks.slice(0)
+        };
+    }
+    this.<span class="apidocCodeKeywordSpan">_schedule</span>();
+};
+Observable.prototype.observe = function (property, callback) {
+    var callbackObject = {
+        callback: callback
+    };
+    if (!this._callbacks[property]) {
+        var oldDescriptor = lang.getPropertyDescriptor(this, property), currentValue = this[property], descriptor = {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.Observable.prototype.observe" id="apidoc.element.intern.Observable.prototype.observe">
+        function <span class="apidocSignatureSpan">intern.Observable.prototype.</span>observe
+        <span class="apidocSignatureSpan">(property, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">observe = function (property, callback) {
+    var callbackObject = {
+        callback: callback
+    };
+    if (!this._callbacks[property]) {
+        var oldDescriptor = lang.getPropertyDescriptor(this, property), currentValue = this[property], descriptor = {
+            configurable: true,
+            enumerable: true
+        };
+        if (oldDescriptor &#x26;&#x26; !(&#x27;value&#x27; in oldDescriptor)) {
+            descriptor.get = oldDescriptor.get;
+            if (oldDescriptor.set) {
+                descriptor.set = function (value) {
+                    oldDescriptor.set.apply(this, arguments);
+                    var newValue = descriptor.get.call(this);
+                    this._notify(property, newValue, currentValue);
+                    currentValue = newValue;
+                };
+            }
+        }
+        else {
+            descriptor.get = function () {
+                return currentValue;
+            };
+            if (oldDescriptor.writable) {
+                descriptor.set = function (newValue) {
+                    this._notify(property, newValue, currentValue);
+                    currentValue = newValue;
+                };
+            }
+        }
+        Object.defineProperty(this, property, descriptor);
+        this._callbacks[property] = [callbackObject];
+    }
+    else {
+        this._callbacks[property].push(callbackObject);
+    }
+    var self = this;
+    return {
+        remove: function () {
+            this.remove = function () { };
+            callbackObject.removed = true;
+            lang.pullFromArray(self._callbacks[property], callbackObject);
+        }
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+if (has(&#x27;dom-mutationobserver&#x27;)) {
+    nextTick = (function () {
+        var MutationObserver = this.MutationObserver || this.WebKitMutationObserver;
+        var element = document.createElement(&#x27;div&#x27;);
+        var observer = new MutationObserver(function () {
+            queue.drain();
+        });
+        observer.<span class="apidocCodeKeywordSpan">observe</span>(element, { attributes: true });
+        return function (callback) {
+            var handle = queue.add(callback);
+            element.setAttribute(&#x27;drainQueue&#x27;, &#x27;1&#x27;);
+            return handle;
+        };
+    })();
+}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.intern.Promise" id="apidoc.module.intern.Promise">module intern.Promise</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.intern.Promise.Promise" id="apidoc.element.intern.Promise.Promise">
+        function <span class="apidocSignatureSpan">intern.</span>Promise
+        <span class="apidocSignatureSpan">(initializer)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Promise(initializer) {
+    var state = Promise.State.PENDING;
+    Object.defineProperty(this, &#x27;state&#x27;, {
+        get: function () {
+            return state;
+        }
+    });
+    function isResolved() {
+        return state !== Promise.State.PENDING || isChained;
+    }
+    var isChained = false;
+    var resolvedValue;
+    var callbacks = [];
+    var whenFinished = function (callback) {
+        callbacks.push(callback);
+    };
+    var progressCallbacks = [];
+    var whenProgress = function (callback) {
+        progressCallbacks.push(callback);
+    };
+    var canceler;
+    var enqueue = (function () {
+        function originalSchedule() {
+            schedule = function () { };
+            nextTick(function run() {
+                try {
+                    var callback;
+                    while ((callback = queue.shift())) {
+                        callback();
+                    }
+                }
+                finally {
+                    if (queue.length) {
+                        run();
+                    }
+                    else {
+                        schedule = originalSchedule;
+                    }
+                }
+            });
+        }
+        var queue = [];
+        var schedule = originalSchedule;
+        return function (callback) {
+            queue.push(callback);
+            schedule();
+        };
+    })();
+    var resolve = function (newState, value) {
+        if (isResolved()) {
+            return;
+        }
+        if (isPromise(value)) {
+            if (value === this) {
+                settle(Promise.State.REJECTED, new TypeError(&#x27;Cannot chain a promise to itself&#x27;));
+                return;
+            }
+            try {
+                value.then(settle.bind(null, Promise.State.FULFILLED), settle.bind(null, Promise.State.REJECTED));
+                isChained = true;
+                canceler = value.cancel;
+            }
+            catch (error) {
+                settle(Promise.State.REJECTED, error);
+                return;
+            }
+        }
+        else {
+            settle(newState, value);
+        }
+    }.bind(this);
+    function settle(newState, value) {
+        if (state !== Promise.State.PENDING) {
+            return;
+        }
+        state = newState;
+        resolvedValue = value;
+        whenFinished = enqueue;
+        whenProgress = function () { };
+        enqueue(function () {
+            runCallbacks(callbacks);
+            callbacks = progressCallbacks = null;
+        });
+    }
+    this.cancel = function (reason) {
+        if (state !== Promise.State.PENDING) {
+            return;
+        }
+        if (!reason) {
+            reason = new Error(&#x27;Cancelled&#x27;);
+            reason.name = &#x27;CancelError&#x27;;
+        }
+        if (!canceler) {
+            settle(Promise.State.REJECTED, reason);
+            return Promise.reject(reason);
+        }
+        try {
+            resolve(Promise.State.FULFILLED, canceler(reason));
+        }
+        catch (error) {
+            settle(Promise.State.REJECTED, error);
+            return Promise.reject(error);
+        }
+    };
+    this.then = function (onFulfilled, onRejected, onProgress) {
+        return new Promise(function (resolve, reject, progress, setCanceler) {
+            setCanceler(function (reason) {
+                if (canceler) {
+                    resolve(canceler(reason));
+                }
+                else {
+                    throw reason;
+                }
+            });
+            whenProgress(function (data) {
+                try {
+                    if (typeof onProgress === &#x27;function&#x27;) {
+                        progress(onProgress(data));
+                    }
+                    else {
+                        progress(data);
+                    }
+                }
+                catch (error) {
+                    if (error.name !== &#x27;StopProgressPropagation&#x27;) {
+                        throw error;
+                    }
+                }
+            });
+            whenFinished(function () {
+                var callback = state === Promise.State.REJECTED ? onRejected : onFulfilled; ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.Promise.Deferred" id="apidoc.element.intern.Promise.Deferred">
+        function <span class="apidocSignatureSpan">intern.Promise.</span>Deferred
+        <span class="apidocSignatureSpan">(canceler)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Deferred(canceler) {
+    var _this = this;
+    this.promise = new Promise(function (resolve, reject, progress, setCanceler) {
+        _this.progress = progress;
+        _this.reject = reject;
+        _this.resolve = resolve;
+        canceler &#x26;&#x26; setCanceler(canceler);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+			var self = this;
+			var reporterManager = this.reporterManager;
+			var config = this.config;
+			var remote = this.remote;
+			var sessionId = remote.session.sessionId;
+
+			var handle = this.proxy.subscribeToSession(sessionId, receiveEvent);
+			var dfd = new Promise.<span class="apidocCodeKeywordSpan">Deferred</span>(function (reason) {
+				handle.remove();
+				return remote.setHeartbeatInterval(0).then(function () {
+					throw reason;
+				});
+			});
+
+			function receiveEvent(name) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.Promise.all" id="apidoc.element.intern.Promise.all">
+        function <span class="apidocSignatureSpan">intern.Promise.</span>all
+        <span class="apidocSignatureSpan">(iterable)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">all = function (iterable) {
+    return new this(function (resolve, reject, progress, setCanceler) {
+        setCanceler(function (reason) {
+            walkIterable(function (key, value) {
+                if (value &#x26;&#x26; value.cancel) {
+                    value.cancel(reason);
+                }
+            });
+            throw reason;
+        });
+        function fulfill(key, value) {
+            values[key] = value;
+            progress(values);
+            ++complete;
+            finish();
+        }
+        function finish() {
+            if (populating || complete &#x3c; total) {
+                return;
+            }
+            resolve(values);
+        }
+        function processItem(key, value) {
+            ++total;
+            if (isPromise(value)) {
+                value.then(fulfill.bind(null, key), reject);
+            }
+            else {
+                fulfill(key, value);
+            }
+        }
+        function walkIterable(callback) {
+            if (Array.isArray(iterable)) {
+                for (var i = 0, j = iterable.length; i &#x3c; j; ++i) {
+                    if (i in iterable) {
+                        callback(String(i), iterable[i]);
+                    }
+                }
+            }
+            else {
+                for (var key in iterable) {
+                    callback(key, iterable[key]);
+                }
+            }
+        }
+        var values = Array.isArray(iterable) ? [] : {};
+        var complete = 0;
+        var total = 0;
+        var populating = true;
+        walkIterable(processItem);
+        populating = false;
+        finish();
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+				var self = this;
+				request.on(&#x27;end&#x27;, function () {
+					try {
+						var messages = JSON.parse(data).map(function (messageString) {
+							return JSON.parse(messageString);
+						});
+
+						var runnerReporterPromise = Promise.<span class="apidocCodeKeywordSpan">all</span>(messages.map(function (message) {
+							return self._publishInSequence(message);
+						}));
+
+						var shouldWait = messages.some(function (message) {
+							return util.getShouldWait(self.config.waitForRunner, message.payload);
+						});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.Promise.reject" id="apidoc.element.intern.Promise.reject">
+        function <span class="apidocSignatureSpan">intern.Promise.</span>reject
+        <span class="apidocSignatureSpan">(error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">reject = function (error) {
+    return new this(function (resolve, reject) {
+        reject(error);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+			rejectOnError: function (callback) {
+				var self = this;
+				return function () {
+					try {
+						return callback.apply(this, arguments);
+					}
+					catch (error) {
+						self.<span class="apidocCodeKeywordSpan">reject</span>(error);
+					}
+				};
+			},
+
+			callback: function (callback) {
+				var self = this;
+				return self.rejectOnError(function () {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.Promise.resolve" id="apidoc.element.intern.Promise.resolve">
+        function <span class="apidocSignatureSpan">intern.Promise.</span>resolve
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">resolve = function (value) {
+    if (value instanceof Promise) {
+        return value;
+    }
+    return new this(function (resolve) {
+        resolve(value);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+			value: function () {
+				function report(eventName) {
+					if (reporterManager) {
+						var args = [ eventName, self ].concat(Array.prototype.slice.call(arguments, 1));
+						return reporterManager.emit.apply(reporterManager, args).catch(function () {});
+					}
+					else {
+						return Promise.<span class="apidocCodeKeywordSpan">resolve</span>();
+					}
+				}
+
+				var reporterManager = this.reporterManager;
+
+				this.hasPassed = false;
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.intern.Promise.prototype" id="apidoc.module.intern.Promise.prototype">module intern.Promise.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.intern.Promise.prototype.catch" id="apidoc.element.intern.Promise.prototype.catch">
+        function <span class="apidocSignatureSpan">intern.Promise.prototype.</span>catch
+        <span class="apidocSignatureSpan">(onRejected)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">catch = function (onRejected) {
+    return this.then(null, onRejected);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		},
+
+		run: {
+			value: function () {
+				function report(eventName) {
+					if (reporterManager) {
+						var args = [ eventName, self ].concat(Array.prototype.slice.call(arguments, 1));
+						return reporterManager.emit.apply(reporterManager, args).<span class="apidocCodeKeywordSpan">catch</span>(function () {});
+					}
+					else {
+						return Promise.resolve();
+					}
+				}
+
+				var reporterManager = this.reporterManager;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.Promise.prototype.finally" id="apidoc.element.intern.Promise.prototype.finally">
+        function <span class="apidocSignatureSpan">intern.Promise.prototype.</span>finally
+        <span class="apidocSignatureSpan">(onFulfilledOrRejected)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">finally = function (onFulfilledOrRejected) {
+    function getFinalValue(defaultCallback) {
+        var returnValue = onFulfilledOrRejected();
+        if (returnValue === undefined) {
+            return defaultCallback();
+        }
+        else if (returnValue &#x26;&#x26; returnValue.then) {
+            return returnValue.then(function (returnValue) {
+                return returnValue !== undefined ? returnValue : defaultCallback();
+            });
+        }
+        else {
+            return returnValue;
+        }
+    }
+    return this.then(function (value) {
+        return getFinalValue(function () {
+            return value;
+        });
+    }, function (error) {
+        return getFinalValue(function () {
+            throw error;
+        });
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+					benchmark.on(&#x27;complete&#x27;, function () {
+						resolve();
+					});
+
+					report(&#x27;testStart&#x27;).then(function () {
+						benchmark.run();
+					});
+				}).<span class="apidocCodeKeywordSpan">finally</span>(function () {
+					// Stop listening for benchmark events once the test is finished
+					benchmark.off();
+				}).then(function () {
+					self.hasPassed = true;
+
+					return report(&#x27;testPass&#x27;, {
+						times: self.benchmark.times,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.Promise.prototype.progress" id="apidoc.element.intern.Promise.prototype.progress">
+        function <span class="apidocSignatureSpan">intern.Promise.prototype.</span>progress
+        <span class="apidocSignatureSpan">(onProgress)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">progress = function (onProgress) {
+    return this.then(null, null, onProgress);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.intern.Registry" id="apidoc.module.intern.Registry">module intern.Registry</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.intern.Registry.Registry" id="apidoc.element.intern.Registry.Registry">
+        function <span class="apidocSignatureSpan">intern.</span>Registry
+        <span class="apidocSignatureSpan">(defaultValue)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Registry(defaultValue) {
+    this._entries = [];
+    this._defaultValue = defaultValue;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.intern.Registry.prototype" id="apidoc.module.intern.Registry.prototype">module intern.Registry.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.intern.Registry.prototype.match" id="apidoc.element.intern.Registry.prototype.match">
+        function <span class="apidocSignatureSpan">intern.Registry.prototype.</span>match
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">match = function () {
+    var args = [];
+    for (var _i = 0; _i &#x3c; arguments.length; _i++) {
+        args[_i - 0] = arguments[_i];
+    }
+    var entries = this._entries.slice(0);
+    var entry;
+    for (var i = 0; (entry = entries[i]); ++i) {
+        if (entry.test.apply(null, args)) {
+            return entry.value;
+        }
+    }
+    if (this._defaultValue !== undefined) {
+        return this._defaultValue;
+    }
+    throw new Error(&#x27;No match found&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        return has;
+    })();
+    has.add(&#x27;host-browser&#x27;, typeof document !== &#x27;undefined&#x27; &#x26;&#x26; typeof location !== &#x27;undefined
+&#x27;);
+    has.add(&#x27;host-node&#x27;, typeof process === &#x27;object&#x27; &#x26;&#x26; process.versions &#x26;&#x26; process.versions
+.node);
+    has.add(&#x27;debug&#x27;, true);
+}
+has.normalize = function (resourceId, normalize) {
+    var tokens = resourceId.<span class="apidocCodeKeywordSpan">match</span>(/[\?:]|[^:\?]*/g);
+    var i = 0;
+    function get(skip) {
+        var term = tokens[i++];
+        if (term === &#x27;:&#x27;) {
+            return null;
+        }
+        else {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.Registry.prototype.register" id="apidoc.element.intern.Registry.prototype.register">
+        function <span class="apidocSignatureSpan">intern.Registry.prototype.</span>register
+        <span class="apidocSignatureSpan">(test, value, first)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">register = function (test, value, first) {
+    var entries = this._entries;
+    var entry = {
+        test: test,
+        value: value
+    };
+    entries[first ? &#x27;unshift&#x27; : &#x27;push&#x27;](entry);
+    return {
+        remove: function () {
+            this.remove = function () { };
+            lang.pullFromArray(entries, entry);
+            test = value = entries = entry = null;
+        }
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    });
+    return promise;
+};
+request.providerRegistry = new Registry(defaultProvider);
+request.filterRegistry = new Registry(function (response) {
+    return response;
+});
+request.filterRegistry.<span class="apidocCodeKeywordSpan">register</span>(function (response, url, options) {
+    return typeof response.data === &#x27;string&#x27; &#x26;&#x26; options.responseType === &#x27;json&#x27;;
+}, function (response, url, options) {
+    return JSON.parse(response.data);
+});
+[&#x27;delete&#x27;, &#x27;get&#x27;, &#x27;post&#x27;, &#x27;put&#x27;].forEach(function (method) {
+    request[method] = function (url, options) {
+        options = Object.create(options);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.intern.Scheduler" id="apidoc.module.intern.Scheduler">module intern.Scheduler</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.intern.Scheduler.Scheduler" id="apidoc.element.intern.Scheduler.Scheduler">
+        function <span class="apidocSignatureSpan">intern.</span>Scheduler
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Scheduler() {
+    this._callbacks = new CallbackQueue();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.Scheduler.schedule" id="apidoc.element.intern.Scheduler.schedule">
+        function <span class="apidocSignatureSpan">intern.Scheduler.</span>schedule
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">schedule = function (callback) {
+    return scheduler.schedule(callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+                    callbackObject.removed = true;
+                    lang.pullFromArray(self._callbacks[property], callbackObject);
+                }
+            };
+        };
+        Observable.prototype._schedule = function () {
+            if (!this._timer) {
+                this._timer = Scheduler.<span class="apidocCodeKeywordSpan">schedule</span>(this._dispatch);
+            }
+        };
+        return Observable;
+    })();
+    return Observable;
+});
+//# sourceMappingURL=_debug/Observable.js.map
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.intern.Scheduler.prototype" id="apidoc.module.intern.Scheduler.prototype">module intern.Scheduler.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.intern.Scheduler.prototype.schedule" id="apidoc.element.intern.Scheduler.prototype.schedule">
+        function <span class="apidocSignatureSpan">intern.Scheduler.prototype.</span>schedule
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">schedule = function (callback) {
+    var _this = this;
+    var handle = this._callbacks.add(callback);
+    nextTick(function () {
+        _this._callbacks.drain();
+    });
+    return handle;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+                    callbackObject.removed = true;
+                    lang.pullFromArray(self._callbacks[property], callbackObject);
+                }
+            };
+        };
+        Observable.prototype._schedule = function () {
+            if (!this._timer) {
+                this._timer = Scheduler.<span class="apidocCodeKeywordSpan">schedule</span>(this._dispatch);
+            }
+        };
+        return Observable;
+    })();
+    return Observable;
+});
+//# sourceMappingURL=_debug/Observable.js.map
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.intern.aspect" id="apidoc.module.intern.aspect">module intern.aspect</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.intern.aspect.after" id="apidoc.element.intern.aspect.after">
+        function <span class="apidocSignatureSpan">intern.aspect.</span>after
+        <span class="apidocSignatureSpan">(target, methodName, advice)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function after(target, methodName, advice) {
+    return advise(getDispatcher(target, methodName), &#x27;after&#x27;, advice);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+				var server = this.server = http.createServer(lang.bind(this, &#x27;_handler&#x27;));
+				this._sessions = {};
+				this._codeCache = {};
+
+				var sockets = [];
+
+				// If sockets are not manually destroyed then Node.js will keep itself running until they all expire
+				aspect.<span class="apidocCodeKeywordSpan">after</span>(server, &#x27;close&#x27;, function () {
+					var socket;
+					while ((socket = sockets.pop())) {
+						socket.destroy();
+					}
+				});
+
+				server.on(&#x27;connection&#x27;, function (socket) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.aspect.around" id="apidoc.element.intern.aspect.around">
+        function <span class="apidocSignatureSpan">intern.aspect.</span>around
+        <span class="apidocSignatureSpan">(target, methodName, advice)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function around(target, methodName, advice) {
+    var dispatcher = getDispatcher(target, methodName);
+    var previous = dispatcher.around;
+    var advised = advice(function () {
+        return previous.advice(this, arguments);
+    });
+    dispatcher.around = {
+        advice: function (target, args) {
+            return advised ?
+                advised.apply(target, args) :
+                previous.advice(target, args);
+        }
+    };
+    advice = null;
+    return {
+        remove: function () {
+            this.remove = noop;
+            advised = dispatcher = null;
+        }
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.aspect.before" id="apidoc.element.intern.aspect.before">
+        function <span class="apidocSignatureSpan">intern.aspect.</span>before
+        <span class="apidocSignatureSpan">(target, methodName, advice)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function before(target, methodName, advice) {
+    return advise(getDispatcher(target, methodName), &#x27;before&#x27;, advice);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+						return firstLetter.toUpperCase();
+					});
+				}
+				else {
+					continue;
+				}
+
+				aspect.<span class="apidocCodeKeywordSpan">before</span>(this, eventName, (function (callback) {
+					return function () {
+						return callback.apply(reporterMap, arguments);
+					};
+				})(callback));
+			}
+		}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.aspect.on" id="apidoc.element.intern.aspect.on">
+        function <span class="apidocSignatureSpan">intern.aspect.</span>on
+        <span class="apidocSignatureSpan">(target, methodName, advice)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function on(target, methodName, advice) {
+    return advise(getDispatcher(target, methodName), &#x27;after&#x27;, advice, true);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+					setCanceler(function (reason) {
+						benchmark.error = reason;
+						benchmark.abort();
+
+						throw reason;
+					});
+
+					benchmark.<span class="apidocCodeKeywordSpan">on</span>(&#x27;abort&#x27;, function () {
+						reject(benchmark.error);
+					});
+
+					benchmark.on(&#x27;error&#x27;, function () {
+						reject(benchmark.error);
+					});
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.intern.cookie" id="apidoc.module.intern.cookie">module intern.cookie</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.intern.cookie.getItem" id="apidoc.element.intern.cookie.getItem">
+        function <span class="apidocSignatureSpan">intern.cookie.</span>getItem
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getItem(key) {
+    var match = new RegExp(&#x27;(?:^|; )&#x27; + string.escapeRegExpString(encodeURIComponent(key)) + &#x27;=([^;]*)&#x27;).exec(document.cookie);
+    return match ? decodeURIComponent(match[1]) : null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.cookie.key" id="apidoc.element.intern.cookie.key">
+        function <span class="apidocSignatureSpan">intern.cookie.</span>key
+        <span class="apidocSignatureSpan">(index)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function key(index) {
+    var keyValuePair = document.cookie.split(&#x27;; &#x27;, index + 1)[index];
+    return keyValuePair ? decodeURIComponent(/^([^=]+)/.exec(keyValuePair)[0]) : null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.cookie.removeItem" id="apidoc.element.intern.cookie.removeItem">
+        function <span class="apidocSignatureSpan">intern.cookie.</span>removeItem
+        <span class="apidocSignatureSpan">(key, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function removeItem(key, options) {
+    options = options ? Object.create(options) : {};
+    options.expires = longAgo;
+    document.cookie = encodeURIComponent(key) + &#x27;=&#x27; + createCookieOptions(options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.cookie.setItem" id="apidoc.element.intern.cookie.setItem">
+        function <span class="apidocSignatureSpan">intern.cookie.</span>setItem
+        <span class="apidocSignatureSpan">(key, data, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setItem(key, data, options) {
+    if (options === void 0) { options = {}; }
+    document.cookie = encodeURIComponent(key) + &#x27;=&#x27; + encodeURIComponent(data) + createCookieOptions(options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.intern.diff" id="apidoc.module.intern.diff">module intern.diff</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.intern.diff.Diff" id="apidoc.element.intern.diff.Diff">
+        function <span class="apidocSignatureSpan">intern.diff.</span>Diff
+        <span class="apidocSignatureSpan">(ignoreWhitespace)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Diff = function (ignoreWhitespace) {
+  this.ignoreWhitespace = ignoreWhitespace;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.diff.applyPatch" id="apidoc.element.intern.diff.applyPatch">
+        function <span class="apidocSignatureSpan">intern.diff.</span>applyPatch
+        <span class="apidocSignatureSpan">(oldStr, uniDiff)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">applyPatch = function (oldStr, uniDiff) {
+  var diffstr = uniDiff.split(&#x27;\n&#x27;);
+  var diff = [];
+  var remEOFNL = false,
+      addEOFNL = false;
+
+  for (var i = (diffstr[0][0]===&#x27;I&#x27;?4:0); i &#x3c; diffstr.length; i++) {
+    if(diffstr[i][0] === &#x27;@&#x27;) {
+      var meh = diffstr[i].split(/@@ -(\d+),(\d+) \+(\d+),(\d+) @@/);
+      diff.unshift({
+        start:meh[3],
+        oldlength:meh[2],
+        oldlines:[],
+        newlength:meh[4],
+        newlines:[]
+      });
+    } else if(diffstr[i][0] === &#x27;+&#x27;) {
+      diff[0].newlines.push(diffstr[i].substr(1));
+    } else if(diffstr[i][0] === &#x27;-&#x27;) {
+      diff[0].oldlines.push(diffstr[i].substr(1));
+    } else if(diffstr[i][0] === &#x27; &#x27;) {
+      diff[0].newlines.push(diffstr[i].substr(1));
+      diff[0].oldlines.push(diffstr[i].substr(1));
+    } else if(diffstr[i][0] === &#x27;\\&#x27;) {
+      if (diffstr[i-1][0] === &#x27;+&#x27;) {
+        remEOFNL = true;
+      } else if(diffstr[i-1][0] === &#x27;-&#x27;) {
+        addEOFNL = true;
+      }
+    }
+  }
+
+  var str = oldStr.split(&#x27;\n&#x27;);
+  for (var i = diff.length - 1; i &#x3e;= 0; i--) {
+    var d = diff[i];
+    for (var j = 0; j &#x3c; d.oldlength; j++) {
+      if(str[d.start-1+j] !== d.oldlines[j]) {
+        return false;
+      }
+    }
+    Array.prototype.splice.apply(str,[d.start-1,+d.oldlength].concat(d.newlines));
+  }
+
+  if (remEOFNL) {
+    while (!str[str.length-1]) {
+      str.pop();
+    }
+  } else if (addEOFNL) {
+    str.push(&#x27;&#x27;);
+  }
+  return str.join(&#x27;\n&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.diff.convertChangesToDMP" id="apidoc.element.intern.diff.convertChangesToDMP">
+        function <span class="apidocSignatureSpan">intern.diff.</span>convertChangesToDMP
+        <span class="apidocSignatureSpan">(changes)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">convertChangesToDMP = function (changes){
+  var ret = [], change;
+  for ( var i = 0; i &#x3c; changes.length; i++) {
+    change = changes[i];
+    ret.push([(change.added ? 1 : change.removed ? -1 : 0), change.value]);
+  }
+  return ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.diff.convertChangesToXML" id="apidoc.element.intern.diff.convertChangesToXML">
+        function <span class="apidocSignatureSpan">intern.diff.</span>convertChangesToXML
+        <span class="apidocSignatureSpan">(changes)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">convertChangesToXML = function (changes){
+  var ret = [];
+  for ( var i = 0; i &#x3c; changes.length; i++) {
+    var change = changes[i];
+    if (change.added) {
+      ret.push(&#x27;&#x3c;ins&#x3e;&#x27;);
+    } else if (change.removed) {
+      ret.push(&#x27;&#x3c;del&#x3e;&#x27;);
+    }
+
+    ret.push(escapeHTML(change.value));
+
+    if (change.added) {
+      ret.push(&#x27;&#x3c;/ins&#x3e;&#x27;);
+    } else if (change.removed) {
+      ret.push(&#x27;&#x3c;/del&#x3e;&#x27;);
+    }
+  }
+  return ret.join(&#x27;&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.diff.createPatch" id="apidoc.element.intern.diff.createPatch">
+        function <span class="apidocSignatureSpan">intern.diff.</span>createPatch
+        <span class="apidocSignatureSpan">(fileName, oldStr, newStr, oldHeader, newHeader)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createPatch = function (fileName, oldStr, newStr, oldHeader, newHeader) {
+  var ret = [];
+
+  ret.push(&#x27;Index: &#x27; + fileName);
+  ret.push(&#x27;===================================================================&#x27;);
+  ret.push(&#x27;--- &#x27; + fileName + (typeof oldHeader === &#x27;undefined&#x27; ? &#x27;&#x27; : &#x27;\t&#x27; + oldHeader));
+  ret.push(&#x27;+++ &#x27; + fileName + (typeof newHeader === &#x27;undefined&#x27; ? &#x27;&#x27; : &#x27;\t&#x27; + newHeader));
+
+  var diff = LineDiff.diff(oldStr, newStr);
+  if (!diff[diff.length-1].value) {
+    diff.pop();   // Remove trailing newline add
+  }
+  diff.push({value: &#x27;&#x27;, lines: []});   // Append an empty value to make cleanup easier
+
+  function contextLines(lines) {
+    return map(lines, function(entry) { return &#x27; &#x27; + entry; });
+  }
+  function eofNL(curRange, i, current) {
+    var last = diff[diff.length-2],
+        isLast = i === diff.length-2,
+        isLastOfType = i === diff.length-3 &#x26;&#x26; (current.added !== last.added || current.removed !== last.removed);
+
+    // Figure out if this is the last line for the given file and missing NL
+    if (!/\n$/.test(current.value) &#x26;&#x26; (isLast || isLastOfType)) {
+      curRange.push(&#x27;\\ No newline at end of file&#x27;);
+    }
+  }
+
+  var oldRangeStart = 0, newRangeStart = 0, curRange = [],
+      oldLine = 1, newLine = 1;
+  for (var i = 0; i &#x3c; diff.length; i++) {
+    var current = diff[i],
+        lines = current.lines || current.value.replace(/\n$/, &#x27;&#x27;).split(&#x27;\n&#x27;);
+    current.lines = lines;
+
+    if (current.added || current.removed) {
+      if (!oldRangeStart) {
+        var prev = diff[i-1];
+        oldRangeStart = oldLine;
+        newRangeStart = newLine;
+
+        if (prev) {
+          curRange = contextLines(prev.lines.slice(-4));
+          oldRangeStart -= curRange.length;
+          newRangeStart -= curRange.length;
+        }
+      }
+      curRange.push.apply(curRange, map(lines, function(entry) { return (current.added?&#x27;+&#x27;:&#x27;-&#x27;) + entry; }));
+      eofNL(curRange, i, current);
+
+      if (current.added) {
+        newLine += lines.length;
+      } else {
+        oldLine += lines.length;
+      }
+    } else {
+      if (oldRangeStart) {
+        // Close out any changes that have been output (or join overlapping)
+        if (lines.length &#x3c;= 8 &#x26;&#x26; i &#x3c; diff.length-2) {
+          // Overlapping
+          curRange.push.apply(curRange, contextLines(lines));
+        } else {
+          // end the range and output
+          var contextSize = Math.min(lines.length, 4);
+          ret.push(
+              &#x27;@@ -&#x27; + oldRangeStart + &#x27;,&#x27; + (oldLine-oldRangeStart+contextSize)
+              + &#x27; +&#x27; + newRangeStart + &#x27;,&#x27; + (newLine-newRangeStart+contextSize)
+              + &#x27; @@&#x27;);
+          ret.push.apply(ret, curRange);
+          ret.push.apply(ret, contextLines(lines.slice(0, contextSize)));
+          if (lines.length &#x3c;= 4) {
+            eofNL(ret, i, current);
+          }
+
+          oldRangeStart = 0;  newRangeStart = 0; curRange = [];
+        }
+      }
+      oldLine += lines.length;
+      newLine += lines.length;
+    }
+  }
+
+  return ret.join(&#x27;\n&#x27;) + &#x27;\n&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	 * @returns {string} A unified diff formatted string representing the difference between the two objects.
+	 */
+	function createDiff(actual, expected) {
+		actual = serialize(actual);
+		expected = serialize(expected);
+
+		var diff = diffUtil
+			.<span class="apidocCodeKeywordSpan">createPatch</span>(&#x27;&#x27;, actual + &#x27;\n&#x27;, expected + &#x27;\n&#x27;)
+			// diff header, first range information section, and EOF newline are not relevant for serialised object
+			// diffs
+			.split(&#x27;\n&#x27;)
+			.slice(5, -1)
+			.join(&#x27;\n&#x27;)
+			// range information is not relevant for serialised object diffs
+			.replace(/^@@[^@]*@@$/gm, &#x27;[...]&#x27;);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.diff.diffChars" id="apidoc.element.intern.diff.diffChars">
+        function <span class="apidocSignatureSpan">intern.diff.</span>diffChars
+        <span class="apidocSignatureSpan">(oldStr, newStr)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">diffChars = function (oldStr, newStr) { return CharDiff.diff(oldStr, newStr); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.diff.diffCss" id="apidoc.element.intern.diff.diffCss">
+        function <span class="apidocSignatureSpan">intern.diff.</span>diffCss
+        <span class="apidocSignatureSpan">(oldStr, newStr)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">diffCss = function (oldStr, newStr) { return CssDiff.diff(oldStr, newStr); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.diff.diffLines" id="apidoc.element.intern.diff.diffLines">
+        function <span class="apidocSignatureSpan">intern.diff.</span>diffLines
+        <span class="apidocSignatureSpan">(oldStr, newStr)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">diffLines = function (oldStr, newStr) { return LineDiff.diff(oldStr, newStr); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.diff.diffWords" id="apidoc.element.intern.diff.diffWords">
+        function <span class="apidocSignatureSpan">intern.diff.</span>diffWords
+        <span class="apidocSignatureSpan">(oldStr, newStr)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">diffWords = function (oldStr, newStr) { return WordDiff.diff(oldStr, newStr); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.diff.diffWordsWithSpace" id="apidoc.element.intern.diff.diffWordsWithSpace">
+        function <span class="apidocSignatureSpan">intern.diff.</span>diffWordsWithSpace
+        <span class="apidocSignatureSpan">(oldStr, newStr)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">diffWordsWithSpace = function (oldStr, newStr) { return WordWithSpaceDiff.diff(oldStr, newStr); }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.intern.dom" id="apidoc.module.intern.dom">module intern.dom</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.intern.dom.get" id="apidoc.element.intern.dom.get">
+        function <span class="apidocSignatureSpan">intern.dom.</span>get
+        <span class="apidocSignatureSpan">(id, doc)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function get(id, doc) {
+    if (typeof id !== &#x27;string&#x27;) {
+        return id;
+    }
+    return (doc || document).getElementById(id);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+					case &#x27;runEnd&#x27;:
+						handle.remove();
+						var promise = remote.setHeartbeatInterval(0);
+						if (config.excludeInstrumentation !== true) {
+							// get about:blank to always collect code coverage data from the page in case it is
+							// navigated away later by some other process; this happens during self-testing when
+							// Leadfoot takes over
+							promise = promise.<span class="apidocCodeKeywordSpan">get</span>(&#x27;about:blank&#x27;);
+						}
+						promise.then(function () {
+							return reporterManager.emit(&#x27;suiteEnd&#x27;, self);
+						}).then(function () {
+							dfd.resolve();
+						}, handleError);
+						break;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.intern.has" id="apidoc.module.intern.has">module intern.has</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.intern.has.has" id="apidoc.element.intern.has.has">
+        function <span class="apidocSignatureSpan">intern.</span>has
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">has = function (name) {
+    return typeof hasCache[name] === &#x27;function&#x27; ? (hasCache[name] = hasCache[name](global, document, element)) : hasCache[name];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * Gets the name of the first argument from a function&#x27;s source.
+ *
+ * @private
+ * @param {Function} fn The function.
+ * @returns {string} The argument name.
+ */
+function getFirstArgument(fn) {
+  return (!_.<span class="apidocCodeKeywordSpan">has</span>(fn, &#x27;toString&#x27;) &#x26;&#x26;
+    (/^[\s(]*function[^(]*\(([^\s,)]+)/.exec(fn) || 0)[1]) || &#x27;&#x27;;
+}
+
+/**
+ * Computes the arithmetic mean of a sample.
+ *
+ * @private
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.has.add" id="apidoc.element.intern.has.add">
+        function <span class="apidocSignatureSpan">intern.has.</span>add
+        <span class="apidocSignatureSpan">(name, test, now, force)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">add = function (name, test, now, force) {
+    (!(name in hasCache) || force) &#x26;&#x26; (hasCache[name] = test);
+    now &#x26;&#x26; has(name);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	glob,
+	pathUtil,
+	hook,
+	Instrumenter,
+	sourceMap,
+	fs
+) {
+	has.<span class="apidocCodeKeywordSpan">add</span>(&#x27;function-name&#x27;, function () {
+		function foo() {}
+		return foo.name === &#x27;foo&#x27;;
+	});
+
+	var instrumentationSourceMap = {};
+	var fileSourceMaps = {};
+	var fileSources = {};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.has.load" id="apidoc.element.intern.has.load">
+        function <span class="apidocSignatureSpan">intern.has.</span>load
+        <span class="apidocSignatureSpan">(resourceId, require, load)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">load = function (resourceId, require, load) {
+    if (resourceId) {
+        require([resourceId], load);
+    }
+    else {
+        load();
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var onLoad = function (def) {
+    module.result = def;
+    --waitingCount;
+    module.executed = true;
+    checkComplete();
+};
+if (plugin.load) {
+    plugin.<span class="apidocCodeKeywordSpan">load</span>(module.prid, module.req, onLoad);
+}
+else if (plugin.loadQ) {
+    plugin.loadQ.push(module);
+}
+else {
+    plugin.loadQ = [module];
+    execQ.unshift(plugin);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.has.normalize" id="apidoc.element.intern.has.normalize">
+        function <span class="apidocSignatureSpan">intern.has.</span>normalize
+        <span class="apidocSignatureSpan">(resourceId, normalize)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">normalize = function (resourceId, normalize) {
+    var tokens = resourceId.match(/[\?:]|[^:\?]*/g);
+    var i = 0;
+    function get(skip) {
+        var term = tokens[i++];
+        if (term === &#x27;:&#x27;) {
+            return null;
+        }
+        else {
+            if (tokens[i++] === &#x27;?&#x27;) {
+                if (!skip &#x26;&#x26; has(term)) {
+                    return get();
+                }
+                else {
+                    get(true);
+                    return get(skip);
+                }
+            }
+            return term;
+        }
+    }
+    resourceId = get();
+    return resourceId &#x26;&#x26; normalize(resourceId);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+			}
+
+			return shouldWait;
+		},
+
+		normalizePath: function (path) {
+			if (pathUtil) {
+				return pathUtil.<span class="apidocCodeKeywordSpan">normalize</span>(path).replace(/\\/g, &#x27;/&#x27;);
+			}
+
+			var parts = path.replace(/\\/g, &#x27;/&#x27;).split(&#x27;/&#x27;);
+			var result = [];
+			for (var i = 0; i &#x3c; parts.length; ++i) {
+				var part = parts[i];
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.intern.io_query" id="apidoc.module.intern.io_query">module intern.io_query</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.intern.io_query.objectToQuery" id="apidoc.element.intern.io_query.objectToQuery">
+        function <span class="apidocSignatureSpan">intern.io_query.</span>objectToQuery
+        <span class="apidocSignatureSpan">(map)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function objectToQuery(map) {
+    var query = [];
+    var value;
+    for (var key in map) {
+        value = map[key];
+        key = encodeURIComponent(key);
+        if (typeof value === &#x27;boolean&#x27;) {
+            value &#x26;&#x26; query.push(key);
+        }
+        else if (Array.isArray(value)) {
+            for (var i = 0, j = value.length; i &#x3c; j; ++i) {
+                query.push(key + &#x27;=&#x27; + encodeURIComponent(value[i]));
+            }
+        }
+        else {
+            query.push(key + &#x27;=&#x27; + encodeURIComponent(value));
+        }
+    }
+    return query.join(&#x27;&#x26;&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+			// does not treat the session as having timed out
+			var timeout = config.capabilities[&#x27;idle-timeout&#x27;];
+			if (timeout &#x3e;= 1 &#x26;&#x26; timeout &#x3c; Infinity) {
+				remote.setHeartbeatInterval((timeout - 1) * 1000);
+			}
+
+			remote
+				.get(config.proxyUrl + &#x27;__intern/client.html?&#x27; + ioQuery.<span class="apidocCodeKeywordSpan">objectToQuery</span>(
+options))
+				.catch(function (error) {
+					handle.remove();
+					remote.setHeartbeatInterval(0).then(function () {
+						handleError(error);
+					});
+				});
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.intern.lang" id="apidoc.module.intern.lang">module intern.lang</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.intern.lang.bind" id="apidoc.element.intern.lang.bind">
+        function <span class="apidocSignatureSpan">intern.lang.</span>bind
+        <span class="apidocSignatureSpan">(context, fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function bind(context, fn) {
+    var extra = [];
+    for (var _i = 2; _i &#x3c; arguments.length; _i++) {
+        extra[_i - 2] = arguments[_i];
+    }
+    if (typeof fn === &#x27;function&#x27;) {
+        return _bind.apply(fn, [context].concat(extra));
+    }
+    return function () {
+        return context[fn].apply(context, extra.concat(slice.call(arguments, 0)));
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+			});
+			response.end(&#x27;&#x3c;!DOCTYPE html&#x3e;&#x3c;title&#x3e;404 Not Found&#x3c;/title&#x3e;&#x3c;h1&#x3e;404 Not Found&#x3c;/
+h1&#x3e;&#x3c;!-- &#x27; +
+				new Array(512).join(&#x27;.&#x27;) + &#x27; --&#x3e;&#x27;);
+		},
+
+		start: function () {
+			return new Promise(function (resolve) {
+				var server = this.server = http.createServer(lang.<span class="apidocCodeKeywordSpan">bind</span>(this, &#x27;_handler&#x27;));
+				this._sessions = {};
+				this._codeCache = {};
+
+				var sockets = [];
+
+				// If sockets are not manually destroyed then Node.js will keep itself running until they all expire
+				aspect.after(server, &#x27;close&#x27;, function () {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.lang.deepDelegate" id="apidoc.element.intern.lang.deepDelegate">
+        function <span class="apidocSignatureSpan">intern.lang.</span>deepDelegate
+        <span class="apidocSignatureSpan">(source, properties)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function deepDelegate(source, properties) {
+    var target = delegate(source);
+    for (var name in source) {
+        var value = source[name];
+        if (value &#x26;&#x26; typeof value === &#x27;object&#x27;) {
+            target[name] = deepDelegate(value);
+        }
+    }
+    return deepMixin(target, properties);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.lang.deepMixin" id="apidoc.element.intern.lang.deepMixin">
+        function <span class="apidocSignatureSpan">intern.lang.</span>deepMixin
+        <span class="apidocSignatureSpan">(target, source)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function deepMixin(target, source) {
+    if (source &#x26;&#x26; typeof source === &#x27;object&#x27;) {
+        if (Array.isArray(source)) {
+            target.length = source.length;
+        }
+        for (var name in source) {
+            var targetValue = target[name];
+            var sourceValue = source[name];
+            if (targetValue !== sourceValue) {
+                if (sourceValue &#x26;&#x26; typeof sourceValue === &#x27;object&#x27;) {
+                    if (sourceValue instanceof RegExp ||
+                        sourceValue instanceof Date ||
+                        sourceValue instanceof String ||
+                        sourceValue instanceof Number ||
+                        sourceValue instanceof Boolean) {
+                        target[name] = targetValue = new sourceValue.constructor(sourceValue);
+                    }
+                    else if (!targetValue || typeof targetValue !== &#x27;object&#x27;) {
+                        target[name] = targetValue = Array.isArray(sourceValue) ? [] : {};
+                    }
+                    deepMixin(targetValue, sourceValue);
+                }
+                else {
+                    target[name] = sourceValue;
+                }
+            }
+        }
+    }
+    return target;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.lang.delegate" id="apidoc.element.intern.lang.delegate">
+        function <span class="apidocSignatureSpan">intern.lang.</span>delegate
+        <span class="apidocSignatureSpan">(object, properties)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function delegate(object, properties) {
+    object = Object.create(object);
+    _mixin(object, properties);
+    return object;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+								return process.stdout.write.apply(process.stdout, args);
+							};
+						}
+						else {
+							write = process.stdout.write.bind(process.stdout);
+						}
+
+						config.output = lang.<span class="apidocCodeKeywordSpan">delegate</span>(process.stdout, {
+							write: write,
+							// Allow reporters to call `end` regardless of whether or not they are outputting to file,
+							// without an error for stdout (which cannot be closed)
+							end: write
+						});
+					}
+				}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.lang.getProperty" id="apidoc.element.intern.lang.getProperty">
+        function <span class="apidocSignatureSpan">intern.lang.</span>getProperty
+        <span class="apidocSignatureSpan">(object, propertyName, create)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getProperty(object, propertyName, create) {
+    if (create === void 0) { create = false; }
+    return getDottedProperty(object, propertyName.split(&#x27;.&#x27;), create);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    return value;
+}
+;
+function substitute(template, map, transform, context) {
+    context = context || undefined;
+    transform = transform ? transform.bind(context) : defaultTransform;
+    return template.replace(substitutePattern, function (match, key, format) {
+        var value = lang.<span class="apidocCodeKeywordSpan">getProperty</span>(map, key);
+        if (format) {
+            value = lang.getProperty(context, format).call(context, value, key);
+        }
+        return transform(value, key) + &#x27;&#x27;;
+    });
+}
+exports.substitute = substitute;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.lang.getPropertyDescriptor" id="apidoc.element.intern.lang.getPropertyDescriptor">
+        function <span class="apidocSignatureSpan">intern.lang.</span>getPropertyDescriptor
+        <span class="apidocSignatureSpan">(object, property)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getPropertyDescriptor = function (object, property) {
+    var descriptor;
+    while (object) {
+        descriptor = Object.getOwnPropertyDescriptor(object, property);
+        if (descriptor) {
+            return descriptor;
+        }
+        object = Object.getPrototypeOf(object);
+    }
+    return null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    this._schedule();
+};
+Observable.prototype.observe = function (property, callback) {
+    var callbackObject = {
+        callback: callback
+    };
+    if (!this._callbacks[property]) {
+        var oldDescriptor = lang.<span class="apidocCodeKeywordSpan">getPropertyDescriptor</span>(this, property), currentValue =
+this[property], descriptor = {
+            configurable: true,
+            enumerable: true
+        };
+        if (oldDescriptor &#x26;&#x26; !(&#x27;value&#x27; in oldDescriptor)) {
+            descriptor.get = oldDescriptor.get;
+            if (oldDescriptor.set) {
+                descriptor.set = function (value) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.lang.isEqual" id="apidoc.element.intern.lang.isEqual">
+        function <span class="apidocSignatureSpan">intern.lang.</span>isEqual
+        <span class="apidocSignatureSpan">(a, b)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isEqual(a, b) {
+    return a === b || (a !== a &#x26;&#x26; b !== b);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+            if (!callback.removed) {
+                callback.callback.call(this, notification.newValue, notification.oldValue);
+            }
+        }
+    }
+};
+Observable.prototype._isEqual = function (a, b) {
+    return lang.<span class="apidocCodeKeywordSpan">isEqual</span>(a, b);
+};
+Observable.prototype._notify = function (property, newValue, oldValue) {
+    var callbacks = this._callbacks[property];
+    if (!callbacks || !callbacks.length) {
+        return;
+    }
+    var notification = this._notifications[property];
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.lang.mixin" id="apidoc.element.intern.lang.mixin">
+        function <span class="apidocSignatureSpan">intern.lang.</span>mixin
+        <span class="apidocSignatureSpan">(target)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function mixin(target) {
+    var sources = [];
+    for (var _i = 1; _i &#x3c; arguments.length; _i++) {
+        sources[_i - 1] = arguments[_i];
+    }
+    if (!target) {
+        target = {};
+    }
+    for (var i = 0; i &#x3c; sources.length; i++) {
+        _mixin(target, sources[i]);
+    }
+    return target;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		return createLifecycle;
+	})();
+
+	function BenchmarkTest(kwArgs) {
+		// `options`, if present, will be a property on the test function
+		this.test = (kwArgs &#x26;&#x26; kwArgs.test) || /* istanbul ignore next */ function () {};
+		var self = this;
+		var options = lang.<span class="apidocCodeKeywordSpan">mixin</span>({}, this.test.options, {
+			async: true,
+			setup: createLifecycle(true),
+			teardown: createLifecycle(false)
+		});
+
+		if (&#x27;skip&#x27; in options) {
+			this.skipped = options.skip;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.lang.partial" id="apidoc.element.intern.lang.partial">
+        function <span class="apidocSignatureSpan">intern.lang.</span>partial
+        <span class="apidocSignatureSpan">(fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function partial(fn) {
+    var extra = [];
+    for (var _i = 1; _i &#x3c; arguments.length; _i++) {
+        extra[_i - 1] = arguments[_i];
+    }
+    return function () {
+        return fn.apply(this, extra.concat(slice.call(arguments, 0)));
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * A specialized version of `_.cloneDeep` which only clones arrays and plain
+ * objects assigning all other values by reference.
+ *
+ * @private
+ * @param {*} value The value to clone.
+ * @returns {*} The cloned value.
+ */
+var cloneDeep = _.<span class="apidocCodeKeywordSpan">partial</span>(_.cloneDeepWith, _, function(value) {
+  // Only clone primitives, arrays, and plain objects.
+  return (_.isObject(value) &#x26;&#x26; !_.isArray(value) &#x26;&#x26; !_.isPlainObject(value))
+    ? value
+    : undefined;
+});
+
+/**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.lang.pullFromArray" id="apidoc.element.intern.lang.pullFromArray">
+        function <span class="apidocSignatureSpan">intern.lang.</span>pullFromArray
+        <span class="apidocSignatureSpan">(haystack, needle)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function pullFromArray(haystack, needle) {
+    var removed = [];
+    var i = 0;
+    while ((i = haystack.indexOf(needle, i)) &#x3e; -1) {
+        removed.push(haystack.splice(i, 1)[0]);
+    }
+    return removed;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+		subscribeToSession: function (sessionId, listener) {
+			var listeners = this._getSession(sessionId).listeners;
+			listeners.push(listener);
+			return {
+				remove: function () {
+					this.remove = function () {};
+					lang.<span class="apidocCodeKeywordSpan">pullFromArray</span>(listeners, listener);
+				}
+			};
+		}
+	};
+
+	return Proxy;
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.lang.setProperty" id="apidoc.element.intern.lang.setProperty">
+        function <span class="apidocSignatureSpan">intern.lang.</span>setProperty
+        <span class="apidocSignatureSpan">(object, propertyName, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setProperty(object, propertyName, value) {
+    var parts = propertyName.split(&#x27;.&#x27;);
+    var part = parts.pop();
+    var property = getDottedProperty(object, parts, true);
+    if (property &#x26;&#x26; part) {
+        property[part] = value;
+        return value;
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.intern.loader" id="apidoc.module.intern.loader">module intern.loader</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.intern.loader.loader" id="apidoc.element.intern.loader.loader">
+        function <span class="apidocSignatureSpan">intern.</span>loader
+        <span class="apidocSignatureSpan">(config, dependencies, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">loader = function (config, dependencies, callback) {
+    if (Array.isArray(config) || typeof config === &#x27;string&#x27;) {
+        callback = dependencies;
+        dependencies = config;
+        config = {};
+    }
+    if (has(&#x27;loader-configurable&#x27;)) {
+        configure(config);
+    }
+    contextRequire(dependencies, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.loader.cache" id="apidoc.element.intern.loader.cache">
+        function <span class="apidocSignatureSpan">intern.loader.</span>cache
+        <span class="apidocSignatureSpan">(cache)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cache = function (cache) {
+    consumePendingCacheInsert();
+    pendingCacheInsert = cache;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.loader.config" id="apidoc.element.intern.loader.config">
+        function <span class="apidocSignatureSpan">intern.loader.</span>config
+        <span class="apidocSignatureSpan">(config)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">config = function (config) {
+    baseUrl = (config.baseUrl || baseUrl).replace(/\/*$/, &#x27;/&#x27;);
+    forEach(config.packages, function (p) {
+        if (typeof p === &#x27;string&#x27;) {
+            p = { name: p, location: p };
+        }
+        if (p.location != null) {
+            p.location = p.location.replace(/\/*$/, &#x27;/&#x27;);
+        }
+        packs[p.name] = p;
+    });
+    function computeMapProg(map) {
+        // This method takes a map as represented by a JavaScript object and initializes an array of
+        // arrays of (map-key, map-value, regex-for-map-key, length-of-map-key), sorted decreasing by length-
+        // of-map-key. The regex looks for the map-key followed by either &#x22;/&#x22; or end-of-string at the beginning
+        // of a the search source.
+        //
+        // Maps look like this:
+        //
+        // map: { C: { D: E } }
+        //      A    B
+        //
+        // The computed mapping is a 4-array deep tree, where the outermost array corresponds to the source
+        // mapping object A, the 2nd level arrays each correspond to one of the source mappings C -&#x3e; B, the 3rd
+        // level arrays correspond to each destination mapping object B, and the innermost arrays each
+        // correspond to one of the destination mappings D -&#x3e; E.
+        //
+        // So, the overall structure looks like this:
+        //
+        // mapProgs = [ source mapping array, source mapping array, ... ]
+        // source mapping array = [
+        //     source module id,
+        //     [ destination mapping array, destination mapping array, ... ],
+        //     RegExp that matches on source module id,
+        //     source module id length
+        // ]
+        // destination mapping array = [
+        //     original module id,
+        //     destination module id,
+        //     RegExp that matches on original module id,
+        //     original module id length
+        // ]
+        var result = [];
+        for (var moduleId in map) {
+            var value = map[moduleId];
+            var valueIsMapReplacement = typeof value === &#x27;object&#x27;;
+            var item = {
+                0: moduleId,
+                1: valueIsMapReplacement ? computeMapProg(value) : value,
+                2: new RegExp(&#x27;^&#x27; + moduleId.replace(/[-\[\]{}()*+?.,\\\^$|#\s]/g, &#x27;\\$&#x26;&#x27;) + &#x27;(?:\/|$)&#x27;),
+                3: moduleId.length
+            };
+            result.push(item);
+            if (valueIsMapReplacement &#x26;&#x26; moduleId === &#x27;*&#x27;) {
+                result.star = item[1];
+            }
+        }
+        result.sort(function (lhs, rhs) {
+            return rhs[3] - lhs[3];
+        });
+        return result;
+    }
+    mix(map, config.map);
+    mapProgs = computeMapProg(map);
+    config.paths &#x26;&#x26; (pathsMapProg = computeMapProg(config.paths));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.loader.has" id="apidoc.element.intern.loader.has">
+        function <span class="apidocSignatureSpan">intern.loader.</span>has
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">has = function (name) {
+    return typeof hasCache[name] === &#x27;function&#x27; ? (hasCache[name] = hasCache[name](global, document, element)) : hasCache[name];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * Gets the name of the first argument from a function&#x27;s source.
+ *
+ * @private
+ * @param {Function} fn The function.
+ * @returns {string} The argument name.
+ */
+function getFirstArgument(fn) {
+  return (!_.<span class="apidocCodeKeywordSpan">has</span>(fn, &#x27;toString&#x27;) &#x26;&#x26;
+    (/^[\s(]*function[^(]*\(([^\s,)]+)/.exec(fn) || 0)[1]) || &#x27;&#x27;;
+}
+
+/**
+ * Computes the arithmetic mean of a sample.
+ *
+ * @private
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.loader.inspect" id="apidoc.element.intern.loader.inspect">
+        function <span class="apidocSignatureSpan">intern.loader.</span>inspect
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">inspect = function (name) {
+    return eval(name);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.loader.nodeRequire" id="apidoc.element.intern.loader.nodeRequire">
+        function <span class="apidocSignatureSpan">intern.loader.</span>nodeRequire
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function require(path) {
+  try {
+    exports.requireDepth += 1;
+    return self.require(path);
+  } finally {
+    exports.requireDepth -= 1;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+            callback(xhr.responseText);
+        };
+        xhr.open(&#x27;GET&#x27;, url, true);
+        xhr.send(null);
+    };
+}
+else if (has(&#x27;host-node&#x27;)) {
+    var fs = require.nodeRequire ? require.<span class="apidocCodeKeywordSpan">nodeRequire</span>(&#x27;fs&#x27;) : require(&#x27
+;fs&#x27;);
+    getText = function (url, callback) {
+        fs.readFile(url, { encoding: &#x27;utf8&#x27; }, function (error, data) {
+            if (error) {
+                throw error;
+            }
+            callback(data);
+        });
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.loader.signal" id="apidoc.element.intern.loader.signal">
+        function <span class="apidocSignatureSpan">intern.loader.</span>signal
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">signal = function () { }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.loader.toAbsMid" id="apidoc.element.intern.loader.toAbsMid">
+        function <span class="apidocSignatureSpan">intern.loader.</span>toAbsMid
+        <span class="apidocSignatureSpan">(mid, referenceModule)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toAbsMid(mid, referenceModule) {
+    return getModuleInfo(mid, referenceModule).mid;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+                url +
+                (/\.js(?:\?[^?]*)?$/.test(url) ? &#x27;&#x27; : &#x27;.js&#x27;))
+        };
+    }
+    return result;
+}
+function resolvePluginResourceId(plugin, prid, contextRequire) {
+    return plugin.normalize ? plugin.normalize(prid, contextRequire.toAbsMid) : contextRequire.<span class="apidocCodeKeywordSpan
+">toAbsMid</span>(prid);
+}
+function getModule(mid, referenceModule) {
+    var match;
+    var plugin;
+    var prid;
+    var result;
+    var contextRequire;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.loader.toUrl" id="apidoc.element.intern.loader.toUrl">
+        function <span class="apidocSignatureSpan">intern.loader.</span>toUrl
+        <span class="apidocSignatureSpan">(name, referenceModule)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toUrl(name, referenceModule) {
+    var moduleInfo = getModuleInfo(name + &#x27;/x&#x27;, referenceModule);
+    var url = moduleInfo.url;
+    return url.slice(0, url.length - 5);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+			}
+
+			var file = /^\/+([^?]*)/.exec(request.url)[1];
+			var wholePath;
+			var self = this;
+
+			if (/^__intern\//.test(file)) {
+				wholePath = path.join(require.<span class="apidocCodeKeywordSpan">toUrl</span>(&#x27;intern/&#x27;), file.replace(/^__intern\//, &#x27;&#x27;));
+				instrument = false;
+			}
+			else {
+				wholePath = path.join(this.config.basePath, file);
+			}
+
+			wholePath = util.normalizePath(wholePath);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.loader.undef" id="apidoc.element.intern.loader.undef">
+        function <span class="apidocSignatureSpan">intern.loader.</span>undef
+        <span class="apidocSignatureSpan">(id)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">undef = function (id) {
+    if (modules[id]) {
+        modules[id] = undefined;
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.intern.node" id="apidoc.module.intern.node">module intern.node</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.intern.node.load" id="apidoc.element.intern.node.load">
+        function <span class="apidocSignatureSpan">intern.node.</span>load
+        <span class="apidocSignatureSpan">(id, contextRequire, load)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function load(id, contextRequire, load) {
+<span class="apidocCodeCommentSpan">    /*global define:true */
+</span>    if (module._findPath &#x26;&#x26; module._nodeModulePaths) {
+        var localModulePath = module._findPath(id, module._nodeModulePaths(contextRequire.toUrl(&#x27;.&#x27;)));
+        if (localModulePath !== false) {
+            id = localModulePath;
+        }
+    }
+    var oldDefine = global.define;
+    var result;
+    global.define = undefined;
+    try {
+        result = nodeRequire(id);
+    }
+    finally {
+        global.define = oldDefine;
+    }
+    load(result);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var onLoad = function (def) {
+    module.result = def;
+    --waitingCount;
+    module.executed = true;
+    checkComplete();
+};
+if (plugin.load) {
+    plugin.<span class="apidocCodeKeywordSpan">load</span>(module.prid, module.req, onLoad);
+}
+else if (plugin.loadQ) {
+    plugin.loadQ.push(module);
+}
+else {
+    plugin.loadQ = [module];
+    execQ.unshift(plugin);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.node.normalize" id="apidoc.element.intern.node.normalize">
+        function <span class="apidocSignatureSpan">intern.node.</span>normalize
+        <span class="apidocSignatureSpan">(id, normalize)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function normalize(id, normalize) {
+    if (id.charAt(0) === &#x27;.&#x27;) {
+        id = require.toUrl(normalize(&#x27;./&#x27; + id));
+    }
+    return id;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+			}
+
+			return shouldWait;
+		},
+
+		normalizePath: function (path) {
+			if (pathUtil) {
+				return pathUtil.<span class="apidocCodeKeywordSpan">normalize</span>(path).replace(/\\/g, &#x27;/&#x27;);
+			}
+
+			var parts = path.replace(/\\/g, &#x27;/&#x27;).split(&#x27;/&#x27;);
+			var result = [];
+			for (var i = 0; i &#x3c; parts.length; ++i) {
+				var part = parts[i];
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.intern.on" id="apidoc.module.intern.on">module intern.on</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.intern.on.on" id="apidoc.element.intern.on.on">
+        function <span class="apidocSignatureSpan">intern.</span>on
+        <span class="apidocSignatureSpan">(target, type, listener, capture)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">on = function (target, type, listener, capture) {
+    if (typeof target.on === &#x27;function&#x27; &#x26;&#x26; typeof type !== &#x27;function&#x27; &#x26;&#x26; !target.nodeType) {
+        return target.on(type, listener, capture);
+    }
+    return on.parse(target, type, listener, this, addListener, capture);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+					setCanceler(function (reason) {
+						benchmark.error = reason;
+						benchmark.abort();
+
+						throw reason;
+					});
+
+					benchmark.<span class="apidocCodeKeywordSpan">on</span>(&#x27;abort&#x27;, function () {
+						reject(benchmark.error);
+					});
+
+					benchmark.on(&#x27;error&#x27;, function () {
+						reject(benchmark.error);
+					});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.on.emit" id="apidoc.element.intern.on.emit">
+        function <span class="apidocSignatureSpan">intern.on.</span>emit
+        <span class="apidocSignatureSpan">(target, type, event)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">emit = function (target, type, event) {
+    if (typeof target.emit === &#x27;function&#x27; &#x26;&#x26; !target.nodeType) {
+        return target.emit(type, event);
+    }
+    if (target.dispatchEvent &#x26;&#x26; target.ownerDocument &#x26;&#x26; target.ownerDocument.createEvent) {
+        var nativeEvent = target.ownerDocument.createEvent(&#x27;HTMLEvents&#x27;);
+        nativeEvent.initEvent(type, Boolean(event.bubbles), Boolean(event.cancelable));
+        for (var key in event) {
+            if (!(key in nativeEvent)) {
+                nativeEvent[key] = event[key];
+            }
+        }
+        return target.dispatchEvent(nativeEvent);
+    }
+    throw new Error(&#x27;Target must be an event emitter&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+						suite = arguments[1];
+						// The suite sent by the server is the root suite for the client-side unit tests; add its tests
+						// to the runner-side client suite
+						if (!suite.hasParent) {
+							suite.tests.forEach(function (test) {
+								self.tests.push(test);
+							});
+							return reporterManager.<span class="apidocCodeKeywordSpan">emit</span>(&#x27;suiteStart&#x27;, self);
+						}
+						return forward();
+
+					case &#x27;suiteEnd&#x27;:
+						suite = arguments[1];
+						self.skipped = suite.skipped;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.on.parse" id="apidoc.element.intern.on.parse">
+        function <span class="apidocSignatureSpan">intern.on.</span>parse
+        <span class="apidocSignatureSpan">(target, type, listener, context, addListener, capture)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parse = function (target, type, listener, context, addListener, capture) {
+    if (type.call) {
+        return type.call(context, target, listener, capture);
+    }
+    if (type.indexOf(&#x27;,&#x27;) &#x3e; -1) {
+        var events = type.split(/\s*,\s*/);
+        var handles = events.map(function (type) {
+            return addListener(target, type, listener, capture);
+        });
+        return {
+            remove: function () {
+                this.remove = noop;
+                var handle;
+                while ((handle = handles.pop())) {
+                    handle.remove();
+                }
+            }
+        };
+    }
+    return addListener(target, type, listener, capture);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+			function handleError(error) {
+				self.error = error;
+				return self.reporterManager.emit(&#x27;suiteError&#x27;, self, error).then(function () {
+					dfd.reject(error);
+				});
+			}
+
+			var proxyBasePath = urlUtil.<span class="apidocCodeKeywordSpan">parse</span>(config.proxyUrl).pathname;
+
+			var clientReporter = this.config.runnerClientReporter;
+			if (typeof clientReporter === &#x27;object&#x27;) {
+				// Need to mixin the properties of `clientReporter` to a new object before stringify because
+				// stringify only serialises an object’s own properties
+				clientReporter = JSON.stringify(lang.mixin({}, clientReporter));
+			}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.intern.request" id="apidoc.module.intern.request">module intern.request</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.intern.request.request" id="apidoc.element.intern.request.request">
+        function <span class="apidocSignatureSpan">intern.</span>request
+        <span class="apidocSignatureSpan">(url, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">request = function (url, options) {
+    if (options === void 0) { options = {}; }
+    var args = Array.prototype.slice.call(arguments, 0);
+    var promise = request.providerRegistry.match(arguments).apply(null, arguments).then(function (response) {
+        args.unshift(response);
+        return Promise.resolve(request.filterRegistry.match(args).apply(null, args)).then(function (filterResponse) {
+            response.data = filterResponse.data;
+            return response;
+        });
+    });
+    promise.data = promise.then(function (response) {
+        return response.data;
+    });
+    return promise;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.request.delete" id="apidoc.element.intern.request.delete">
+        function <span class="apidocSignatureSpan">intern.request.</span>delete
+        <span class="apidocSignatureSpan">(url, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">delete = function (url, options) {
+    options = Object.create(options);
+    options.method = method.toUpperCase();
+    return request(url, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.request.get" id="apidoc.element.intern.request.get">
+        function <span class="apidocSignatureSpan">intern.request.</span>get
+        <span class="apidocSignatureSpan">(url, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function (url, options) {
+    options = Object.create(options);
+    options.method = method.toUpperCase();
+    return request(url, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+					case &#x27;runEnd&#x27;:
+						handle.remove();
+						var promise = remote.setHeartbeatInterval(0);
+						if (config.excludeInstrumentation !== true) {
+							// get about:blank to always collect code coverage data from the page in case it is
+							// navigated away later by some other process; this happens during self-testing when
+							// Leadfoot takes over
+							promise = promise.<span class="apidocCodeKeywordSpan">get</span>(&#x27;about:blank&#x27;);
+						}
+						promise.then(function () {
+							return reporterManager.emit(&#x27;suiteEnd&#x27;, self);
+						}).then(function () {
+							dfd.resolve();
+						}, handleError);
+						break;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.request.post" id="apidoc.element.intern.request.post">
+        function <span class="apidocSignatureSpan">intern.request.</span>post
+        <span class="apidocSignatureSpan">(url, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">post = function (url, options) {
+    options = Object.create(options);
+    options.method = method.toUpperCase();
+    return request(url, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+				var block = [ messages.shift() ];
+				var size = block[0].length;
+				while (messages.length &#x3e; 0 &#x26;&#x26; size + messages[0].length &#x3c; maxPostSize) {
+					size += messages[0].length;
+					block.push(messages.shift());
+				}
+
+				return request.<span class="apidocCodeKeywordSpan">post</span>(url, {
+					headers: { &#x27;Content-Type&#x27;: &#x27;application/json&#x27; },
+					data: JSON.stringify(block)
+				}).then(function () {
+					if (messages.length &#x3e; 0) {
+						return sendNextBlock();
+					}
+				});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.request.put" id="apidoc.element.intern.request.put">
+        function <span class="apidocSignatureSpan">intern.request.</span>put
+        <span class="apidocSignatureSpan">(url, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">put = function (url, options) {
+    options = Object.create(options);
+    options.method = method.toUpperCase();
+    return request(url, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.intern.string" id="apidoc.module.intern.string">module intern.string</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.intern.string.count" id="apidoc.element.intern.string.count">
+        function <span class="apidocSignatureSpan">intern.string.</span>count
+        <span class="apidocSignatureSpan">(haystack, needle)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function count(haystack, needle) {
+    var hits = 0, lastIndex = haystack.indexOf(needle);
+    while (lastIndex &#x3e; -1) {
+        ++hits;
+        lastIndex = haystack.indexOf(needle, lastIndex + 1);
+    }
+    return hits;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+            optionsString += &#x27;=&#x27; + encodeURIComponent(value);
+        }
+    }
+    return optionsString;
+}
+Object.defineProperty(exports, &#x27;length&#x27;, {
+    get: function () {
+        return document.cookie.length ? string.<span class="apidocCodeKeywordSpan">count</span>(document.cookie, &#x27;; &#x27;) +
+1 : 0;
+    },
+    enumerable: true,
+    configurable: true
+});
+function key(index) {
+    var keyValuePair = document.cookie.split(&#x27;; &#x27;, index + 1)[index];
+    return keyValuePair ? decodeURIComponent(/^([^=]+)/.exec(keyValuePair)[0]) : null;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.string.escapeRegExpString" id="apidoc.element.intern.string.escapeRegExpString">
+        function <span class="apidocSignatureSpan">intern.string.</span>escapeRegExpString
+        <span class="apidocSignatureSpan">(string)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function escapeRegExpString(string) {
+    return string.replace(regExpPattern, &#x27;\\$&#x26;&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+});
+function key(index) {
+    var keyValuePair = document.cookie.split(&#x27;; &#x27;, index + 1)[index];
+    return keyValuePair ? decodeURIComponent(/^([^=]+)/.exec(keyValuePair)[0]) : null;
+}
+exports.key = key;
+function getItem(key) {
+    var match = new RegExp(&#x27;(?:^|; )&#x27; + string.<span class="apidocCodeKeywordSpan">escapeRegExpString</span>(encodeURIComponent
+(key)) + &#x27;=([^;]*)&#x27;).exec(document.cookie);
+    return match ? decodeURIComponent(match[1]) : null;
+}
+exports.getItem = getItem;
+function setItem(key, data, options) {
+    if (options === void 0) { options = {}; }
+    document.cookie = encodeURIComponent(key) + &#x27;=&#x27; + encodeURIComponent(data) + createCookieOptions(options);
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.string.pad" id="apidoc.element.intern.string.pad">
+        function <span class="apidocSignatureSpan">intern.string.</span>pad
+        <span class="apidocSignatureSpan">(text, size, character)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function pad(text, size, character) {
+    if (character === void 0) { character = &#x27; &#x27;; }
+    return _pad(text, size, character, Padding.Both);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.string.padl" id="apidoc.element.intern.string.padl">
+        function <span class="apidocSignatureSpan">intern.string.</span>padl
+        <span class="apidocSignatureSpan">(text, size, character)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function padl(text, size, character) {
+    if (character === void 0) { character = &#x27; &#x27;; }
+    return _pad(text, size, character, Padding.Left);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.string.padr" id="apidoc.element.intern.string.padr">
+        function <span class="apidocSignatureSpan">intern.string.</span>padr
+        <span class="apidocSignatureSpan">(text, size, character)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function padr(text, size, character) {
+    if (character === void 0) { character = &#x27; &#x27;; }
+    return _pad(text, size, character, Padding.Right);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.string.repeat" id="apidoc.element.intern.string.repeat">
+        function <span class="apidocSignatureSpan">intern.string.</span>repeat
+        <span class="apidocSignatureSpan">(string, times)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function repeat(string, times) {
+    if (!string || times &#x3c;= 0) {
+        return &#x27;&#x27;;
+    }
+    var buffer = [];
+    while (true) {
+        if (times &#x26; 1) {
+            buffer.push(string);
+        }
+        times &#x3e;&#x3e;= 1;
+        if (!times) {
+            break;
+        }
+        string += string;
+    }
+    return buffer.join(&#x27;&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    Padding[Padding[&#x22;Left&#x22;] = 0] = &#x22;Left&#x22;;
+    Padding[Padding[&#x22;Right&#x22;] = 1] = &#x22;Right&#x22;;
+    Padding[Padding[&#x22;Both&#x22;] = 2] = &#x22;Both&#x22;;
+})(Padding || (Padding = {}));
+;
+function _pad(text, size, character, position) {
+    if (position === void 0) { position = Padding.Right; }
+    var length = size - text.length, pad = exports.<span class="apidocCodeKeywordSpan">repeat</span>(character, Math.ceil(length
+ / character.length));
+    if (position === Padding.Left) {
+        return pad + text;
+    }
+    else if (position === Padding.Right) {
+        return text + pad;
+    }
+    else {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.string.substitute" id="apidoc.element.intern.string.substitute">
+        function <span class="apidocSignatureSpan">intern.string.</span>substitute
+        <span class="apidocSignatureSpan">(template, map, transform, context)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function substitute(template, map, transform, context) {
+    context = context || undefined;
+    transform = transform ? transform.bind(context) : defaultTransform;
+    return template.replace(substitutePattern, function (match, key, format) {
+        var value = lang.getProperty(map, key);
+        if (format) {
+            value = lang.getProperty(context, format).call(context, value, key);
+        }
+        return transform(value, key) + &#x27;&#x27;;
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+				&#x27;\twhile((suite = queue[--i])) {&#x27;,
+					&#x27;\t\tsuite.${methodName}EachLoop();&#x27;,
+				&#x27;\t}&#x27;,
+			&#x27;})(this.benchmark || this);\n&#x27;
+		].join(&#x27;\n&#x27;);
+
+		function createLifecycle(before) {
+			return string.<span class="apidocCodeKeywordSpan">substitute</span>(template, {
+				queueName: before ? &#x27;Before&#x27; : &#x27;After&#x27;,
+				queueMethod: before ? &#x27;push&#x27; : &#x27;unshift&#x27;,
+				methodName: before ? &#x27;before&#x27; : &#x27;after&#x27;
+			});
+		}
+		return createLifecycle;
+	})();
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.intern.text" id="apidoc.module.intern.text">module intern.text</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.intern.text.load" id="apidoc.element.intern.text.load">
+        function <span class="apidocSignatureSpan">intern.text.</span>load
+        <span class="apidocSignatureSpan">(resourceId, require, load)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function load(resourceId, require, load) {
+    getText(require.toUrl(resourceId), load);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var onLoad = function (def) {
+    module.result = def;
+    --waitingCount;
+    module.executed = true;
+    checkComplete();
+};
+if (plugin.load) {
+    plugin.<span class="apidocCodeKeywordSpan">load</span>(module.prid, module.req, onLoad);
+}
+else if (plugin.loadQ) {
+    plugin.loadQ.push(module);
+}
+else {
+    plugin.loadQ = [module];
+    execQ.unshift(plugin);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.intern.topic" id="apidoc.module.intern.topic">module intern.topic</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.intern.topic.publish" id="apidoc.element.intern.topic.publish">
+        function <span class="apidocSignatureSpan">intern.topic.</span>publish
+        <span class="apidocSignatureSpan">(topic)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function publish(topic) {
+    var args = [];
+    for (var _i = 1; _i &#x3c; arguments.length; _i++) {
+        args[_i - 1] = arguments[_i];
+    }
+    hub.emit.apply(hub, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.intern.topic.subscribe" id="apidoc.element.intern.topic.subscribe">
+        function <span class="apidocSignatureSpan">intern.topic.</span>subscribe
+        <span class="apidocSignatureSpan">(topic, listener)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function subscribe(topic, listener) {
+    return hub.on.apply(hub, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
